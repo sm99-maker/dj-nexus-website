@@ -38,6 +38,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
+/* Button Hover Effect */
 button:hover {
   background-color: #FF007F;
 }
