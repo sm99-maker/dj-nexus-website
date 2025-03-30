@@ -1,3 +1,4 @@
+
 /* Import Futuristic Font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
@@ -14,12 +15,13 @@ body {
 a {
   color: #00FFFF; /* Electric Blue for links */
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* Hover Effect */
 a:hover {
   color: #FF007F; /* Neon Pink when hovering over links */
+  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F;
 }
 
 /* Header Styling */
