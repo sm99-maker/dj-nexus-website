@@ -1,42 +1,116 @@
 /* General Styling */
 body {
-  font-family: Arial, sans-serif; /* Reverting to original font */
-  background-color: #000; /* Black background */
-  color: #fff; /* White text for contrast */
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
 
-/* Link Styles */
-a {
-  color: #00FFFF; /* Electric Blue for links */
+/* Hero Section */
+.hero {
+  background-image: url('hero-bg.jpg');
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #00FFFF;
+}
+.hero-content p {
+  font-size: 1.5rem;
+}
+.hero-buttons .btn {
+  background-color: #00FFFF;
+  color: #000;
+  padding: 10px 20px;
+  margin: 10px;
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.hero-buttons .btn:hover {
+  background-color: #FF007F;
 }
 
-/* Hover Effect */
-a:hover {
-  color: #FF007F; /* Neon Pink when hovering over links */
-  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F; /* Glow effect */
+/* Mixes Section */
+.mixes {
+  padding: 50px;
+  text-align: center;
+}
+.mixes-container iframe {
+  margin-top: 20px;
+  width: 80%;
 }
 
-/* Header Styling */
-h1, h2, h3 {
-  color: #fff;
+/* Gallery Section */
+.gallery {
+  padding: 50px;
+  text-align: center;
+}
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.gallery-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Button Styling */
+/* Booking Section */
+.bookings {
+  padding: 50px;
+  text-align: center;
+}
+form input, form textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
 button {
   background-color: #00FFFF;
   color: #000;
-  border: none;
   padding: 10px 20px;
-  font-family: Arial, sans-serif;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-/* Button Hover Effect */
 button:hover {
   background-color: #FF007F;
+}
+
+/* Merch Section */
+.merch {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px;
+  text-align: center;
+}
+.social-links a {
+  color: #00FFFF;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.social-links a:hover {
+  color: #FF007F;
+  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #111;
 }
