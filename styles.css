@@ -1,10 +1,6 @@
-
-/* Import Futuristic Font */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
 /* General Styling */
 body {
-  font-family: 'Orbitron', sans-serif; /* Futuristic font */
+  font-family: Arial, sans-serif; /* Reverting to original font */
   background-color: #000; /* Black background */
   color: #fff; /* White text for contrast */
   margin: 0;
@@ -21,7 +17,7 @@ a {
 /* Hover Effect */
 a:hover {
   color: #FF007F; /* Neon Pink when hovering over links */
-  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F;
+  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F; /* Glow effect */
 }
 
 /* Header Styling */
@@ -35,7 +31,7 @@ button {
   color: #000;
   border: none;
   padding: 10px 20px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: Arial, sans-serif;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
