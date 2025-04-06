@@ -1,4 +1,4 @@
-/* General Styling */
+/* ===== General Reset ===== */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
@@ -8,14 +8,18 @@ body {
   line-height: 1.6;
 }
 
-/* Container to center and control width */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Container ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Navigation Bar */
+/* ===== Navigation ===== */
 .navbar {
   background-color: #111;
   padding: 15px 20px;
@@ -34,9 +38,6 @@ body {
   display: flex;
   gap: 20px;
 }
-.nav-links li {
-  display: inline;
-}
 .nav-links a {
   color: #00FFFF;
   text-decoration: none;
@@ -46,32 +47,61 @@ body {
   color: #FF007F;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
   background-image: url('hero-bg.jpg');
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   background-size: cover;
+  background-position: center;
   position: relative;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+.hero-text {
+  flex: 2;
+  min-width: 300px;
 }
 .hero h1 {
   font-size: 4rem;
   color: #FF4500;
   animation: fadeInDown 1s ease-in-out;
 }
-.hero .slogan {
+.slogan {
   font-size: 1.8rem;
   color: #FF6347;
   animation: fadeInUp 1.2s ease-in-out;
 }
-.hero .tagline {
+.tagline {
   font-size: 1.2rem;
-  margin-top: 10px;
   color: #fff;
+  margin-top: 10px;
 }
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  max-width: 300px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.hero-img {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Buttons ===== */
 .btn {
   display: inline-block;
   background-color: #FF4500;
@@ -80,53 +110,63 @@ body {
   margin-top: 20px;
   text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 .btn:hover {
   background-color: #FF6347;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Section Styling */
-section {
+.scroll-btn {
+  background-color: transparent;
+  color: #FF6347;
+  font-size: 1.5rem;
+  border: 2px solid #FF6347;
+}
+.scroll-btn:hover {
+  background-color: #FF6347;
+  color: #000;
+  transform: translateY(5px);
+}
+
+/* ===== About Section ===== */
+.about {
   padding: 100px 20px;
-  text-align: center;
 }
-section h2 {
-  color: #FF4500;
-  margin-bottom: 20px;
-}
-
-/* About Section */
 .about-content {
   display: flex;
   gap: 40px;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 .about-content img {
-  width: 50%;
+  width: 45%;
   border-radius: 10px;
+  max-width: 500px;
 }
 .about-text {
   max-width: 500px;
   text-align: left;
 }
 
-/* Mixes Section */
+/* ===== Mixes Section ===== */
 .mixes-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 iframe {
+  width: 100%;
   border-radius: 10px;
+  height: 300px;
 }
 
-/* Merch Section */
+/* ===== Merch Section ===== */
 .merch-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 .merch-gallery img {
@@ -138,9 +178,71 @@ iframe {
   transform: scale(1.05);
 }
 
-/* Booking Form */
+/* ===== Booking Form ===== */
 form input, form textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border-radius: 5
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  background-color: #FF4500;
+  color: #000;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #FF6347;
+  transform: scale(1.05);
+}
+
+/* ===== Contact Section ===== */
+.social-links {
+  margin-top: 20px;
+}
+.social-links a {
+  display: inline-block;
+  margin: 10px;
+  color: #00FFFF;
+  transition: color 0.3s ease;
+}
+.social-links a:hover {
+  color: #FF007F;
+  text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
