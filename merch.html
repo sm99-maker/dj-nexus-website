@@ -1,33 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merch - DJ Nexus</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .merch {
+      min-height: 100vh;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .merch h1 {
+      font-size: 3rem;
+      color: #FF4500;
+      animation: fadeInDown 1s ease-in-out;
+      margin-bottom: 40px;
+    }
+
+    .merch-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .merch-gallery a {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .merch-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .merch-gallery a:hover img {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">DJ Nexus</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="mixes.html">Mixes</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="booking.html">Book Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Merch Section -->
   <section class="merch">
     <div class="container">
-      <h1>Shop DJ Nexus Merch</h1>
+      <h1 class="animate">Shop DJ Nexus Merch</h1>
+
       <div class="merch-gallery">
         <a href="https://www-nexusclothing.myshopify.com/products/three-panel-fleece-hoodie" target="_blank">
-          <img src="merch1.jpg" alt="Three Panel Fleece Hoodie">
+          <img src="images/merch1.jpg" alt="Three Panel Fleece Hoodie" />
         </a>
         <a href="https://www-nexusclothing.myshopify.com/products/unisex-softstyle-t-shirt" target="_blank">
-          <img src="merch2.jpg" alt="Unisex Softstyle T-Shirt">
+          <img src="images/merch2.jpg" alt="Unisex Softstyle T-Shirt" />
         </a>
         <a href="https://www-nexusclothing.myshopify.com/products/ceramic-mug-11oz-15oz" target="_blank">
-          <img src="merch3.jpg" alt="Ceramic Mug 11oz/15oz">
+          <img src="images/merch3.jpg" alt="Ceramic Mug" />
+        </a>
+        <a href="https://www-nexusclothing.myshopify.com/products/unisex-sweatshirt" target="_blank">
+          <img src="images/merch4.jpg" alt="Unisex Sweatshirt" />
+        </a>
+        <a href="https://www-nexusclothing.myshopify.com/products/dad-hat-with-leather-patch-rectangle" target="_blank">
+          <img src="images/merch5.jpg" alt="Dad Hat with Leather Patch" />
+        </a>
+        <a href="https://www-nexusclothing.myshopify.com/products/insulated-travel-mug-40oz" target="_blank">
+          <img src="images/merch6.jpg" alt="Insulated Travel Mug" />
+        </a>
+        <a href="https://www-nexusclothing.myshopify.com/products/skinny-tumbler-with-straw-20oz" target="_blank">
+          <img src="images/merch7.jpg" alt="Skinny Tumbler" />
         </a>
       </div>
-      <a href="https://www-nexusclothing.myshopify.com" class="btn">Visit My Full Store</a>
+
+      <a href="https://www-nexusclothing.myshopify.com" class="btn" style="margin-top: 40px;">Visit My Full Store</a>
+      <br />
       <a href="index.html" class="btn">Back to Home</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 DJ Nexus. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
