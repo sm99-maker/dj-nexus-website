@@ -1,28 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact DJ Nexus</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .contact {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .contact h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #FF4500;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .contact p {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #00FFFF;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: #FF007F;
+      text-shadow: 0 0 10px #FF007F;
+    }
+
+    .contact .social-links {
+      margin-top: 40px;
+    }
+
+    .contact .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      margin: 15px 0;
+    }
+
+    .contact .social-links img {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">DJ Nexus</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="mixes.html">Mixes</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="booking.html">Book Me</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
   <section class="contact">
     <div class="container">
-      <h1>Contact Info</h1>
+      <h1 class="animate">Contact Info</h1>
+
       <p>Email: <a href="mailto:realdjnexus1@gmail.com">realdjnexus1@gmail.com</a></p>
       <p>Phone: <a href="tel:+18624653608">(862) 465-3608</a></p>
+
       <div class="social-links">
-        <a href="https://www.instagram.com/dj___nexus/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@realdjnexus" target="_blank">TikTok</a>
-        <a href="https://www.youtube.com/@realdjnexus" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/dj___nexus/" target="_blank">
+          <img src="images/instagram-icon.png" alt="Instagram" /> @dj___nexus
+        </a>
+        <a href="https://www.tiktok.com/@realdjnexus" target="_blank">
+          <img src="images/tiktok-icon.png" alt="TikTok" /> @realdjnexus
+        </a>
+        <a href="https://www.youtube.com/@realdjnexus" target="_blank">
+          <img src="images/youtube-icon.png" alt="YouTube" /> @realdjnexus
+        </a>
       </div>
+
       <a href="index.html" class="btn">Back to Home</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 DJ Nexus. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
