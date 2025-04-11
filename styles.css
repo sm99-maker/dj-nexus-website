@@ -50,7 +50,7 @@ html {
 /* ===== Hero Section ===== */
 .hero {
   background-image: url('images/hero-bg.jpg');
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   text-align: left;
@@ -84,8 +84,6 @@ html {
   color: #fff;
   margin-top: 10px;
 }
-
-/* Hero Image */
 .hero-image {
   flex: 1;
   max-width: 300px;
@@ -206,14 +204,23 @@ button:hover {
   margin-top: 20px;
 }
 .social-links a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin: 10px;
   color: #00FFFF;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 .social-links a:hover {
   color: #FF007F;
   text-shadow: 0 0 10px #FF007F, 0 0 20px #FF007F;
+}
+.social-links img {
+  width: 28px;
+  height: 28px;
 }
 
 /* ===== Visual Staggered Images ===== */
@@ -240,6 +247,16 @@ button:hover {
 }
 .stagger-left {
   justify-content: flex-start;
+}
+
+/* ✅ Smaller third stagger image */
+.stagger-img-small {
+  width: 85%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
 }
 
 /* ===== Footer ===== */
