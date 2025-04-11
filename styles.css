@@ -232,3 +232,24 @@ footer {
     transform: translateY(0);
   }
 }
+/* ===== About Section ===== */
+.about {
+  padding: 100px 20px;
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.about-content img {
+  width: 40%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+.about-text {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
