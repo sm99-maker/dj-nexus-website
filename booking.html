@@ -3,64 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book DJ Nexus</title>
+  <title>Book Me - DJ Nexus</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .booking {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .booking h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #FF4500;
-      animation: fadeInDown 1s ease-in-out;
-    }
-
-    .booking form {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    .social-links {
-      margin-top: 40px;
-      font-size: 1.2rem;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #00FFFF;
-      font-weight: bold;
-      font-size: 1.3rem;
-      margin: 15px 0;
-      text-decoration: none;
-      justify-content: center;
-      transition: color 0.3s ease;
-    }
-
-    .social-links a:hover {
-      color: #FF007F;
-      text-shadow: 0 0 10px #FF007F;
-    }
-
-    .social-links img {
-      width: 28px;
-      height: 28px;
-    }
-  </style>
 </head>
 <body>
 
@@ -69,6 +13,7 @@
     <div class="container">
       <a href="index.html" class="logo">DJ Nexus</a>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Me</a></li>
         <li><a href="mixes.html">Mixes</a></li>
         <li><a href="merch.html">Merch</a></li>
@@ -78,18 +23,10 @@
     </div>
   </nav>
 
-  <!-- Booking Section -->
   <section class="booking">
     <div class="container">
-      <h1 class="animate">Book DJ Nexus</h1>
-
-      <form action="https://formspree.io/f/your-email" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Tell me about your event" required></textarea>
-        <button type="submit">Submit Request</button>
-      </form>
-
+      <h1>Book DJ Nexus</h1>
+      <p>You can reach out directly or message me through social media to book your event!</p>
       <div class="social-links">
         <a href="https://www.instagram.com/dj___nexus/" target="_blank">
           <img src="images/instagram-icon.png" alt="Instagram" /> @dj___nexus
@@ -101,12 +38,11 @@
           <img src="images/youtube-icon.png" alt="YouTube" /> @realdjnexus
         </a>
       </div>
-
-      <a href="index.html" class="btn">Back to Home</a>
+      <p>Email: realdjnexus1@gmail.com</p>
+      <p>Phone: (862) 465-3608</p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 DJ Nexus. All Rights Reserved.</p>
   </footer>
