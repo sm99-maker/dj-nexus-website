@@ -244,14 +244,16 @@ footer {
   justify-content: center;
 }
 .about-img {
-  width: 35%;
-  max-width: 400px;
+  width: 30%;
+  max-width: 350px;
   border-radius: 10px;
   object-fit: cover;
 }
 .about-text {
   flex: 1;
   max-width: 500px;
+  text-align: left;
+}
   text-align: left;
 }
 
