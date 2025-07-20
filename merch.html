@@ -1,51 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merch - DJ Nexus</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+    .product-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .product-card .price {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .product-card a {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background-color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    .product-card a:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">DJ Nexus</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="mixes.html">Mixes</a></li>
-        <li><a href="merch.html">Merch</a></li>
-        <li><a href="booking.html">Book Me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <header>
+    <h1>DJ Nexus Merch</h1>
+    <p>Shop our exclusive gear and accessories</p>
+  </header>
+  <div class="products">
+    <div class="product-card">
+      <h3>Ceramic Mug, (11oz, 15oz)</h3>
+      <p class="price">$12.50 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/ceramic-mug-11oz-15oz" target="_blank">View Product</a>
     </div>
-  </nav>
-
-  <!-- Merch Section -->
-  <section class="merch">
-    <div class="container">
-      <h1>Merch Store</h1>
-      <div class="merch-gallery">
-        <!-- Replace these images and links with your actual products -->
-        <a href="https://www-nexusclothing.myshopify.com/products/three-panel-fleece-hoodie" target="_blank">
-          <img src="images/hoodie.jpg" alt="Three Panel Fleece Hoodie" />
-        </a>
-        <a href="https://www-nexusclothing.myshopify.com/products/unisex-softstyle-t-shirt" target="_blank">
-          <img src="images/tshirt.jpg" alt="Unisex Softstyle T-Shirt" />
-        </a>
-        <a href="https://www-nexusclothing.myshopify.com/products/ceramic-mug-11oz-15oz" target="_blank">
-          <img src="images/mug.jpg" alt="Ceramic Mug" />
-        </a>
-        <!-- Add more as needed -->
-      </div>
+    <div class="product-card">
+      <h3>Hat with Leather Patch (Rectangle)</h3>
+      <p class="price">$20.45 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/dad-hat-with-leather-patch-rectangle" target="_blank">View Product</a>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 DJ Nexus. All Rights Reserved.</p>
-  </footer>
-
+    <div class="product-card">
+      <h3>Insulated Travel Mug, 40oz</h3>
+      <p class="price">$35.00 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/insulated-travel-mug-40oz" target="_blank">View Product</a>
+    </div>
+    <div class="product-card">
+      <h3>Skinny Tumbler with Straw, 20oz</h3>
+      <p class="price">$28.50 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/skinny-tumbler-with-straw-20oz" target="_blank">View Product</a>
+    </div>
+    <div class="product-card">
+      <h3>Three-Panel Fleece Hoodie</h3>
+      <p class="price">$40.00 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/three-panel-fleece-hoodie" target="_blank">View Product</a>
+    </div>
+    <div class="product-card">
+      <h3>Unisex Softstyle T-Shirt</h3>
+      <p class="price">$25.00 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/unisex-softstyle-t-shirt" target="_blank">View Product</a>
+    </div>
+    <div class="product-card">
+      <h3>Unisex Sweatshirt</h3>
+      <p class="price">$35.00 USD</p>
+      <a href="https://www-nexusclothing.myshopify.com/products/unisex-sweatshirt" target="_blank">View Product</a>
+    </div>
+  </div>
 </body>
 </html>
