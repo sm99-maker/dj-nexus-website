@@ -7,26 +7,45 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f5f5f5;
       color: #333;
-      background: #f9f9f9;
     }
     header {
-      background-color: #000;
-      color: #fff;
+      background-color: #111;
       padding: 1rem 0;
-      text-align: center;
     }
-    .main-content {
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
-    .about-container {
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .about-content {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 2rem;
-      flex-wrap: wrap;
+      padding: 2rem;
     }
     .about-image {
       flex: 0 0 40%;
@@ -36,41 +55,47 @@
       width: 100%;
       height: auto;
       border-radius: 8px;
-      display: block;
     }
     .about-text {
       flex: 1;
+      min-width: 250px;
     }
-    .about-text h2 {
-      margin-top: 0;
+    .about-text p {
+      line-height: 1.6;
+      margin: 0;
     }
-    @media (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-      }
-      .about-image,
-      .about-text {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>DJ Nexus</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <div class="main-content">
-    <div class="about-container">
+
+  <div class="container">
+    <h1>About Me</h1>
+    <div class="about-content">
       <div class="about-image">
-        <!-- Replace with your actual image path -->
-        <img src="images/dj-nexus.jpg" alt="DJ Nexus Portrait">
+        <img src="images/about.jpg" alt="DJ Nexus">
       </div>
       <div class="about-text">
-        <h2>About Me</h2>
         <p>Hi, I’m DJ Nexus — a high school DJ with a passion for mixing genres and eras to create unforgettable vibes. I’ve been fortunate to DJ countless events and parties, bringing people together through the power of music. My goal is to unite people with sound, culture, and good energy.</p>
       </div>
     </div>
   </div>
+
+  <footer>&copy; 2025 DJ Nexus</footer>
 </body>
 </html>
