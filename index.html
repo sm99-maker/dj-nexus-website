@@ -1,1 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DJ Nexus</title>
+  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
+<body>
+  <!-- Top Nav (Jigitz-style: minimal + hamburger) -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Go to home">DJ Nexus</a>
+
+    <nav class="navlinks" aria-label="Primary navigation">
+      <a href="index.html" class="active">home</a>
+      <a href="merch.html">merch</a>
+      <a href="listen.html">listen</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
+    </nav>
+
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menuBtnLines" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+    <div class="mobileMenuInner">
+      <button class="closeBtn" id="closeBtn" aria-label="Close menu">Close Menu</button>
+      <a href="index.html">home</a>
+      <a href="merch.html">merch</a>
+      <a href="listen.html">listen</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
+    </div>
+  </div>
+
+  <!-- Fullscreen Hero (background image + centered name) -->
+  <main class="hero" role="main">
+    <div class="heroBg" aria-hidden="true"></div>
+    <div class="heroOverlay" aria-hidden="true"></div>
+
+    <section class="heroContent">
+      <h1 class="heroTitle">DJ Nexus</h1>
+      <p class="heroTagline">Bridging cultures and uniting eras.</p>
+
+      <div class="heroCtas">
+        <a class="btn" href="listen.html">Listen</a>
+        <a class="btn btnGhost" href="merch.html">Merch</a>
+      </div>
+
+      <div class="heroMeta">
+        <span>Chatham, NJ</span>
+        <span class="dot">•</span>
+        <span>Bookings: <a class="inlineLink" href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
