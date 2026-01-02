@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merch — DJ Nexus</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">DJ Nexus</a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="listen.html">Listen</a>
+      <a href="merch.html" class="active">Merch</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Merch</h1>
+      <p class="muted">Drop your merch links here when you’re ready.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Coming Soon</h3>
+        <p class="muted">T-shirts, hoodies, stickers — Nexus gear.</p>
+        <a class="btn btn-ghost btn-small" href="contact.html">Ask about merch</a>
+      </div>
+
+      <div class="card">
+        <h3>Link a Store</h3>
+        <p class="muted">Shopify / Spring / Fourthwall — whichever you use.</p>
+        <p class="muted" style="margin-top:10px;">When you have a store URL, paste it into this page.</p>
+      </div>
+
+      <div class="card">
+        <h3>QR Code</h3>
+        <p class="muted">Add a QR code image later for easy scanning.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="muted">© <span id="year"></span> DJ Nexus</span>
+      <span class="muted">Bridging cultures & uniting eras.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
