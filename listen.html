@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DJ Nexus — Listen</title>
-  <meta name="description" content="DJ Nexus — Listen to the latest tracks." />
+  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
   <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -19,11 +19,10 @@
       <span class="menuText">Menu</span>
     </button>
 
-    <!-- Top right: ONLY these tabs -->
     <nav class="links desktop">
       <a href="index.html">home</a>
       <a href="merch.html">merch</a>
-      <a href="listen.html">listen</a>
+      <a class="active" href="listen.html">listen</a>
     </nav>
   </header>
 
@@ -31,50 +30,61 @@
   <nav class="mobileMenu" id="mobileMenu" hidden>
     <a href="index.html">home</a>
     <a href="merch.html">merch</a>
-    <a href="listen.html">listen</a>
+    <a class="active" href="listen.html">listen</a>
   </nav>
 
-  <!-- Content -->
+  <!-- Center Content -->
   <main class="stage">
     <section class="stack">
       <p class="headline">listen</p>
-      <p class="headline" style="font-size: clamp(16px, 2vw, 18px); color: rgba(245,245,247,.7); font-weight: 450;">
-        preview the tracks below — play/pause right on the site, then tap the Spotify button to open the full track.
-      </p>
+      <p class="subhead">Preview the tracks right here, then open on Spotify.</p>
 
-      <div class="embedCard">
-        <p class="embedTitle">Track 1</p>
-        <iframe
-          style="border-radius:12px"
-          src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds?utm_source=generator"
-          width="100%"
-          height="352"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
-        <a class="cta subtle" target="_blank" rel="noopener"
+      <!-- Track 1 -->
+      <div class="card">
+        <p class="cardTitle">Track 1</p>
+
+        <div class="embedWrap">
+          <iframe
+            title="Spotify embed track 1"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <a class="cta" target="_blank" rel="noopener"
            href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds">
           open on spotify
         </a>
       </div>
 
-      <div class="embedCard">
-        <p class="embedTitle">Track 2</p>
-        <iframe
-          style="border-radius:12px"
-          src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6?utm_source=generator"
-          width="100%"
-          height="352"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy">
-        </iframe>
-        <a class="cta subtle" target="_blank" rel="noopener"
+      <!-- Track 2 -->
+      <div class="card">
+        <p class="cardTitle">Track 2</p>
+
+        <div class="embedWrap">
+          <iframe
+            title="Spotify embed track 2"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <a class="cta" target="_blank" rel="noopener"
            href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6">
           open on spotify
         </a>
       </div>
+
     </section>
   </main>
 
