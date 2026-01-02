@@ -1,122 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Listen | DJ Nexus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listen — DJ Nexus</title>
   <meta name="description" content="Listen to DJ Nexus releases." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+
+  <!-- Top Bar -->
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Go to home">DJ Nexus</a>
+    <a class="brand" href="index.html" aria-label="Go to home">DJ NEXUS</a>
 
-    <nav class="navlinks" aria-label="Primary navigation">
-      <a href="index.html">home</a>
-      <a href="merch.html">merch</a>
-      <a href="listen.html" class="active">listen</a>
-      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
-    </nav>
-
-    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="menuBtnLines" aria-hidden="true"></span>
+    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="menuOverlay">
+      <span id="menuBtnText">Open Menu</span>
     </button>
   </header>
 
-  <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-    <div class="mobileMenuInner">
-      <button class="closeBtn" id="closeBtn" aria-label="Close menu">Close Menu</button>
-      <a href="index.html">home</a>
-      <a href="merch.html">merch</a>
-      <a href="listen.html">listen</a>
-      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
+  <!-- Fullscreen Menu Overlay -->
+  <div class="menuOverlay" id="menuOverlay" aria-hidden="true">
+    <nav class="menuNav">
+      <a href="index.html" class="menuLink">home</a>
+      <a href="merch.html" class="menuLink">merch</a>
+      <a href="listen.html" class="menuLink">listen</a>
+      <a href="index.html#contact" class="menuLink">contact</a>
+    </nav>
+
+    <div class="menuFooter">
+      <a class="menuSmallLink" href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">soundcloud</a>
+      <span class="dot">•</span>
+      <a class="menuSmallLink" href="https://open.spotify.com/" target="_blank" rel="noopener">spotify</a>
+      <span class="dot">•</span>
+      <a class="menuSmallLink" href="mailto:bookings@yourdomain.com">bookings@yourdomain.com</a>
     </div>
   </div>
 
   <main class="page">
-    <div class="pageHeader">
-      <h1>listen</h1>
+    <div class="pageInner">
+      <p class="eyebrow">listen</p>
+      <h1 class="titleSmall">DJ NEXUS</h1>
+
+      <!-- SoundCloud waveform player (real waveform + play button) -->
+      <section class="panel">
+        <div class="panelHead">
+          <h2 class="panelTitle">soundcloud</h2>
+          <a class="panelLink" href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">open on soundcloud</a>
+        </div>
+
+        <div class="embedWrap">
+          <iframe
+            title="DJ Nexus SoundCloud Player"
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//on.soundcloud.com/WxCWd5XYHB6VaewYO2&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+          </iframe>
+        </div>
+
+        <p class="note">This is the closest “SoundCloud-style waveform player” you can legally embed, with playback on your site.</p>
+      </section>
+
+      <!-- Spotify embeds -->
+      <section class="panel">
+        <div class="panelHead">
+          <h2 class="panelTitle">spotify</h2>
+          <a class="panelLink" href="https://open.spotify.com/" target="_blank" rel="noopener">open spotify</a>
+        </div>
+
+        <div class="trackGrid">
+          <div class="trackCard">
+            <p class="trackName">track 1</p>
+            <div class="embedWrap">
+              <iframe
+                title="Spotify Track 1"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+            <a class="miniLink" href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds?si=9953fa3834dc4d90" target="_blank" rel="noopener">open track</a>
+          </div>
+
+          <div class="trackCard">
+            <p class="trackName">track 2</p>
+            <div class="embedWrap">
+              <iframe
+                title="Spotify Track 2"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+            <a class="miniLink" href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6?si=dc4e0c187b4a40bd" target="_blank" rel="noopener">open track</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a href="index.html" class="footerLink">← back home</a>
+      </footer>
     </div>
-
-    <section class="tracks">
-
-      <!-- Track 1 -->
-      <article class="trackCard">
-        <div class="trackTop">
-          <div>
-            <h2 class="trackTitle">Only You</h2>
-            <p class="trackSub">DJ Nexus</p>
-          </div>
-
-          <a class="btnSmall" target="_blank" rel="noopener"
-             href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds?si=9953fa3834dc4d90">
-            Open on Spotify
-          </a>
-        </div>
-
-        <!-- SoundCloud-style waveform LOOK (visual) -->
-        <div class="waveWrap" aria-hidden="true">
-          <button class="wavePlay" type="button" title="Play preview (Spotify embed below)">
-            ▶
-          </button>
-          <div class="waveform"></div>
-        </div>
-
-        <!-- Real playback: Spotify Embed -->
-        <div class="embedWrap">
-          <iframe
-            title="Only You — Spotify Embed"
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds"
-            width="100%"
-            height="152"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-      </article>
-
-      <!-- Track 2 -->
-      <article class="trackCard">
-        <div class="trackTop">
-          <div>
-            <h2 class="trackTitle">First Time</h2>
-            <p class="trackSub">DJ Nexus</p>
-          </div>
-
-          <a class="btnSmall" target="_blank" rel="noopener"
-             href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6?si=dc4e0c187b4a40bd">
-            Open on Spotify
-          </a>
-        </div>
-
-        <div class="waveWrap" aria-hidden="true">
-          <button class="wavePlay" type="button" title="Play preview (Spotify embed below)">
-            ▶
-          </button>
-          <div class="waveform wave2"></div>
-        </div>
-
-        <div class="embedWrap">
-          <iframe
-            title="First Time — Spotify Embed"
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6"
-            width="100%"
-            height="152"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-      </article>
-
-    </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
