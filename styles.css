@@ -191,3 +191,120 @@ body{
   .links.desktop{ display:none; }
   .menuBtn{ display:flex; }
 }
+/* ====== Listen Page ====== */
+.page{
+  min-height: 100vh;
+  padding: 96px 18px 48px;
+  display:flex;
+  justify-content:center;
+}
+
+.pageInner{
+  width: min(980px, 100%);
+}
+
+.pageTitle{
+  margin: 0 0 8px;
+  font-size: clamp(26px, 3.6vw, 44px);
+  letter-spacing: .02em;
+  font-weight: 650;
+  text-transform: lowercase;
+}
+
+.pageSub{
+  margin: 0 0 22px;
+  color: var(--muted);
+  letter-spacing: .02em;
+  line-height: 1.5;
+  text-transform: lowercase;
+}
+
+.embedGrid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.035);
+  border-radius: 18px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.cardTop{
+  margin-bottom: 10px;
+}
+
+.cardTitle{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: .02em;
+  text-transform: lowercase;
+}
+
+.cardMeta{
+  margin: 6px 0 0;
+  color: var(--muted2);
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: lowercase;
+}
+
+.playerWrap{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(245,245,247,.10);
+  background: rgba(0,0,0,.25);
+}
+
+.spotifyPlayer{
+  display:block;
+  width:100%;
+  border:0;
+}
+
+.cardActions{
+  margin-top: 12px;
+  display:flex;
+  gap: 10px;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+}
+
+.btn{
+  text-decoration:none;
+  color: var(--fg);
+  font-size: 12px;
+  letter-spacing:.08em;
+  text-transform: lowercase;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(245,245,247,.14);
+  background: rgba(255,255,255,.05);
+}
+.btn:hover{
+  background: rgba(255,255,255,.09);
+  border-color: rgba(245,245,247,.22);
+}
+
+.footerNote{
+  margin-top: 18px;
+  display:flex;
+  justify-content:center;
+}
+
+/* Active nav link */
+.links a.active,
+.mobileMenu a.active{
+  color: var(--fg);
+}
+
+/* Responsive */
+@media (max-width: 820px){
+  .embedGrid{
+    grid-template-columns: 1fr;
+  }
+}
