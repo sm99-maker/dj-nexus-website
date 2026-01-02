@@ -1,65 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ Nexus</title>
-  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
-  <link rel="icon" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-  <!-- Top Nav -->
-  <header class="nav">
-    <a class="brand" href="/">DJ NEXUS</a>
+  <header class="site-header">
+    <a class="brand" href="index.html">DJ Nexus</a>
 
-    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="menuIcon" aria-hidden="true"></span>
-      <span class="menuText">Menu</span>
-    </button>
-
-    <nav class="links desktop">
-      <a href="/">home</a>
-      <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
-      <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
-    
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="listen.html">Listen</a>
+      <a href="merch.html">Merch</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- Mobile Menu -->
-  <nav class="mobileMenu" id="mobileMenu" hidden>
-    <a href="/">home</a>
-    <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
-    <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
-  </nav>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Bridging cultures.<br/>Uniting eras.</h1>
+        <p>
+          I’m DJ Nexus — a young DJ/producer blending genres and energy to make every room feel like one crowd.
+        </p>
 
-  <!-- Fullscreen Center Content -->
-  <main class="stage">
-    <section class="stack">
-      <p class="headline">
-        “bridging cultures and uniting eras”
-      </p>
+        <div class="hero-actions">
+          <a class="btn" href="listen.html">Play the latest</a>
+          <a class="btn btn-ghost" href="contact.html">Book me</a>
+        </div>
 
-      <p class="headline">
-        “DJ for parties, events, and everything in between”
-      </p>
+        <div class="mini-links">
+          <a href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds?si=9953fa3834dc4d90" target="_blank" rel="noopener">Spotify</a>
+          <span class="dot">•</span>
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <span class="dot">•</span>
+          <a href="#" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
 
-      <p class="headline">
-        “genre-mixing sets that actually move people”
-      </p>
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <div class="badge">NEW</div>
+          <h2>Featured Track</h2>
+          <p class="muted">Tap to listen + embed</p>
+          <a class="btn btn-small" href="listen.html">Open Listen Page</a>
+        </div>
+      </div>
+    </section>
 
-      <a class="cta" href="mailto:YOUR_EMAIL@gmail.com">bookings: YOUR_EMAIL@gmail.com</a>
-      <a class="cta subtle" href="tel:+18624653608">+1 (862) 465-3608</a>
+    <section class="grid">
+      <div class="card">
+        <h3>Private Events</h3>
+        <p class="muted">Birthdays, graduations, backyard parties, school events, country clubs.</p>
+      </div>
 
-      <div class="row">
-        <a class="pill" href="https://instagram.com/dj___nexus" target="_blank" rel="noopener">instagram</a>
-        <a class="pill" href="https://tiktok.com/@realdjnexus" target="_blank" rel="noopener">tiktok</a>
-        <a class="pill" href="https://soundcloud.com/your" target="_blank" rel="noopener">soundcloud</a>
+      <div class="card">
+        <h3>High Energy Sets</h3>
+        <p class="muted">Real crowd-reading + clean transitions + genre mashes that hit.</p>
+      </div>
+
+      <div class="card">
+        <h3>Original Remixes</h3>
+        <p class="muted">EDM / hip-hop / pop / global sounds — built for the moment.</p>
       </div>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="muted">© <span id="year"></span> DJ Nexus</span>
+      <span class="muted">Bridging cultures & uniting eras.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
