@@ -1,1 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Listen | DJ Nexus</title>
+  <meta name="description" content="Listen to DJ Nexus releases." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Go to home">DJ Nexus</a>
+
+    <nav class="navlinks" aria-label="Primary navigation">
+      <a href="index.html">home</a>
+      <a href="merch.html">merch</a>
+      <a href="listen.html" class="active">listen</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
+    </nav>
+
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menuBtnLines" aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
+    <div class="mobileMenuInner">
+      <button class="closeBtn" id="closeBtn" aria-label="Close menu">Close Menu</button>
+      <a href="index.html">home</a>
+      <a href="merch.html">merch</a>
+      <a href="listen.html">listen</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="pageHeader">
+      <h1>listen</h1>
+    </div>
+
+    <section class="tracks">
+
+      <!-- Track 1 -->
+      <article class="trackCard">
+        <div class="trackTop">
+          <div>
+            <h2 class="trackTitle">Only You</h2>
+            <p class="trackSub">DJ Nexus</p>
+          </div>
+
+          <a class="btnSmall" target="_blank" rel="noopener"
+             href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds?si=9953fa3834dc4d90">
+            Open on Spotify
+          </a>
+        </div>
+
+        <!-- SoundCloud-style waveform LOOK (visual) -->
+        <div class="waveWrap" aria-hidden="true">
+          <button class="wavePlay" type="button" title="Play preview (Spotify embed below)">
+            ▶
+          </button>
+          <div class="waveform"></div>
+        </div>
+
+        <!-- Real playback: Spotify Embed -->
+        <div class="embedWrap">
+          <iframe
+            title="Only You — Spotify Embed"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </article>
+
+      <!-- Track 2 -->
+      <article class="trackCard">
+        <div class="trackTop">
+          <div>
+            <h2 class="trackTitle">First Time</h2>
+            <p class="trackSub">DJ Nexus</p>
+          </div>
+
+          <a class="btnSmall" target="_blank" rel="noopener"
+             href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6?si=dc4e0c187b4a40bd">
+            Open on Spotify
+          </a>
+        </div>
+
+        <div class="waveWrap" aria-hidden="true">
+          <button class="wavePlay" type="button" title="Play preview (Spotify embed below)">
+            ▶
+          </button>
+          <div class="waveform wave2"></div>
+        </div>
+
+        <div class="embedWrap">
+          <iframe
+            title="First Time — Spotify Embed"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
