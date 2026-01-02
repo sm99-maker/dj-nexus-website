@@ -2,58 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DJ Nexus</title>
   <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
+  <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top Nav (Jigitz-style: minimal + hamburger) -->
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Go to home">DJ Nexus</a>
+  <!-- Top Nav -->
+  <header class="nav">
+    <a class="brand" href="/">DJ NEXUS</a>
 
-    <nav class="navlinks" aria-label="Primary navigation">
-      <a href="index.html" class="active">home</a>
-      <a href="merch.html">merch</a>
-      <a href="listen.html">listen</a>
-      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
-    </nav>
-
-    <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="menuBtnLines" aria-hidden="true"></span>
+    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="menuIcon" aria-hidden="true"></span>
+      <span class="menuText">Menu</span>
     </button>
+
+    <nav class="links desktop">
+      <a href="/">home</a>
+      <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
+      <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
+    
+    </nav>
   </header>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobileMenu" id="mobileMenu" aria-hidden="true">
-    <div class="mobileMenuInner">
-      <button class="closeBtn" id="closeBtn" aria-label="Close menu">Close Menu</button>
-      <a href="index.html">home</a>
-      <a href="merch.html">merch</a>
-      <a href="listen.html">listen</a>
-      <a href="https://discord.com/" target="_blank" rel="noopener">discord</a>
-    </div>
-  </div>
+  <!-- Mobile Menu -->
+  <nav class="mobileMenu" id="mobileMenu" hidden>
+    <a href="/">home</a>
+    <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
+    <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
+    
+  </nav>
 
-  <!-- Fullscreen Hero (background image + centered name) -->
-  <main class="hero" role="main">
-    <div class="heroBg" aria-hidden="true"></div>
-    <div class="heroOverlay" aria-hidden="true"></div>
+  <!-- Fullscreen Center Content -->
+  <main class="stage">
+    <section class="stack">
+      <p class="headline">
+        “bridging cultures and uniting eras”
+      </p>
 
-    <section class="heroContent">
-      <h1 class="heroTitle">DJ Nexus</h1>
-      <p class="heroTagline">Bridging cultures and uniting eras.</p>
+      <p class="headline">
+        “DJ for parties, events, and everything in between”
+      </p>
 
-      <div class="heroCtas">
-        <a class="btn" href="listen.html">Listen</a>
-        <a class="btn btnGhost" href="merch.html">Merch</a>
-      </div>
+      <p class="headline">
+        “genre-mixing sets that actually move people”
+      </p>
 
-      <div class="heroMeta">
-        <span>Chatham, NJ</span>
-        <span class="dot">•</span>
-        <span>Bookings: <a class="inlineLink" href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></span>
+      <a class="cta" href="mailto:YOUR_EMAIL@gmail.com">bookings: YOUR_EMAIL@gmail.com</a>
+      <a class="cta subtle" href="tel:+18624653608">+1 (862) 465-3608</a>
+
+      <div class="row">
+        <a class="pill" href="https://instagram.com/dj___nexus" target="_blank" rel="noopener">instagram</a>
+        <a class="pill" href="https://tiktok.com/@realdjnexus" target="_blank" rel="noopener">tiktok</a>
+        <a class="pill" href="https://soundcloud.com/your" target="_blank" rel="noopener">soundcloud</a>
       </div>
     </section>
   </main>
