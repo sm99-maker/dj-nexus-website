@@ -1,62 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DJ Nexus</title>
-  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
-  <link rel="icon" href="assets/favicon.svg" />
+  <meta name="description" content="DJ Nexus — Bridging cultures & uniting eras." />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- Top Nav -->
-  <header class="nav">
-    <a class="brand" href="/">DJ NEXUS</a>
 
-    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="menuIcon" aria-hidden="true"></span>
-      <span class="menuText">Menu</span>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Go to home">DJ NEXUS</a>
+
+    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="menuOverlay">
+      <span id="menuBtnText">Open Menu</span>
     </button>
-
-    <nav class="links desktop">
-      <a href="/">home</a>
-      <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
-      <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
-    </nav>
   </header>
 
-  <!-- Mobile Menu -->
-  <nav class="mobileMenu" id="mobileMenu" hidden>
-    <a href="/">home</a>
-    <a href="https://your-merch-link.com" target="_blank" rel="noopener">merch</a>
-    <a href="https://your-music-link.com" target="_blank" rel="noopener">listen</a>
-  </nav>
+  <!-- Fullscreen Menu Overlay -->
+  <div class="menuOverlay" id="menuOverlay" aria-hidden="true">
+    <nav class="menuNav">
+      <a href="index.html" class="menuLink">home</a>
+      <a href="merch.html" class="menuLink">merch</a>
+      <a href="listen.html" class="menuLink">listen</a>
+      <a href="#contact" class="menuLink">contact</a>
+    </nav>
 
-  <!-- Fullscreen Center Content -->
-  <main class="stage">
-    <section class="stack">
-      <p class="headline">
-        “bridging cultures and uniting eras”
-      </p>
+    <div class="menuFooter">
+      <a class="menuSmallLink" href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">soundcloud</a>
+      <span class="dot">•</span>
+      <a class="menuSmallLink" href="https://open.spotify.com/" target="_blank" rel="noopener">spotify</a>
+      <span class="dot">•</span>
+      <a class="menuSmallLink" href="mailto:bookings@yourdomain.com">bookings@yourdomain.com</a>
+    </div>
+  </div>
 
-      <p class="headline">
-        “DJ for parties, events, and everything in between”
-      </p>
+  <!-- Main Hero -->
+  <main class="hero">
+    <div class="heroInner">
+      <p class="eyebrow">bridging cultures & uniting eras</p>
 
-      <p class="headline">
-        “genre-mixing sets that actually move people”
-      </p>
+      <h1 class="title">DJ NEXUS</h1>
 
-      <a class="cta" href="mailto:YOUR_EMAIL@gmail.com">bookings: YOUR_EMAIL@gmail.com</a>
-      <a class="cta subtle" href="tel:+18624653608">+1 (862) 465-3608</a>
-
-      <div class="row">
-        <a class="pill" href="https://instagram.com/dj___nexus" target="_blank" rel="noopener">instagram</a>
-        <a class="pill" href="https://tiktok.com/@realdjnexus" target="_blank" rel="noopener">tiktok</a>
-        <a class="pill" href="https://soundcloud.com/your" target="_blank" rel="noopener">soundcloud</a>
+      <div class="ctaRow">
+        <a class="btn" href="listen.html">listen</a>
+        <a class="btn btnGhost" href="merch.html">merch</a>
       </div>
-    </section>
+
+      <div class="featureBlock">
+        <p class="featureTitle">latest</p>
+        <p class="featureItem">two spotify tracks + soundcloud waveform player</p>
+      </div>
+
+      <section id="contact" class="contactBlock">
+        <p class="featureTitle">contact</p>
+        <p class="contactLine">
+          bookings: <a href="mailto:bookings@yourdomain.com">bookings@yourdomain.com</a>
+        </p>
+        <p class="contactLine">
+          soundcloud: <a href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">open profile</a>
+        </p>
+      </section>
+    </div>
   </main>
 
   <script src="script.js"></script>
