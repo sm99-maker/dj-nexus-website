@@ -1,42 +1,23 @@
-(function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
+const menuBtn = document.getElementById("menuBtn");
+const mobileNav = document.getElementById("mobileNav");
 
-  function openMenu() {
-    if (!mobileMenu || !menuBtn) return;
-    mobileMenu.classList.add("show");
-    mobileMenu.setAttribute("aria-hidden", "false");
-    menuBtn.setAttribute("aria-expanded", "true");
-  }
+if (menuBtn && mobileNav) {
+  const setOpen = (open) => {
+    mobileNav.classList.toggle("is-open", open);
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
 
-  function closeMenu() {
-    if (!mobileMenu || !menuBtn) return;
-    mobileMenu.classList.remove("show");
-    mobileMenu.setAttribute("aria-hidden", "true");
-    menuBtn.setAttribute("aria-expanded", "false");
-  }
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = mobileNav.classList.contains("is-open");
+    setOpen(!isOpen);
+  });
 
-  if (menuBtn) menuBtn.addEventListener("click", openMenu);
-  if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+  document.addEventListener("click", (e) => {
+    if (!mobileNav.contains(e.target) && e.target !== menuBtn) setOpen(false);
+  });
 
-  // Click outside to close
-  if (mobileMenu) {
-    mobileMenu.addEventListener("click", (e) => {
-      if (e.target === mobileMenu) closeMenu();
-    });
-  }
-
-  // ESC to close
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+    if (e.key === "Escape") setOpen(false);
   });
-
-  // Waveform play buttons are visual (Spotify embed below does real playback)
-  document.querySelectorAll(".wavePlay").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.textContent = btn.textContent.trim() === "▶" ? "⏸" : "▶";
-    });
-  });
-})();
-
+}
