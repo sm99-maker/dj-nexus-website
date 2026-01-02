@@ -6,72 +6,84 @@
   <title>DJ Nexus</title>
   <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Grain overlay for the Jigitz-style texture -->
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand__dot"></span>
+        <span class="brand__text">DJ Nexus</span>
+      </a>
 
-  <!-- Header / Nav (minimal, like Jigitz) -->
-  <header class="header">
-    <a class="brand" href="index.html" aria-label="Go to home">DJ NEXUS</a>
+      <nav class="nav">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="listen.html">Listen</a>
+        <a class="nav__link" href="merch.html">Merch</a>
+      </nav>
 
-    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">
-      <span class="menuBtn__lines" aria-hidden="true"></span>
-      <span class="menuBtn__text">Menu</span>
-    </button>
+      <!-- Socials (replacing the old Listen link / Discord area) -->
+      <div class="socials" aria-label="Social links">
+        <!-- Replace the # links with your real profiles -->
+        <a class="socials__link" href="#" target="_blank" rel="noopener">TikTok</a>
+        <a class="socials__link" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a class="socials__link" href="#" target="_blank" rel="noopener">Spotify</a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="nav__link is-active" href="index.html">home</a>
-      <a class="nav__link" href="merch.html">merch</a>
-      <a class="nav__link" href="listen.html">listen</a>
-      <!-- optional external -->
-      <a class="nav__link" href="https://discord.com" target="_blank" rel="noopener">discord</a>
-    </nav>
+        <!-- SoundCloud link you provided -->
+        <a class="socials__link" href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">SoundCloud</a>
+
+        <a class="socials__link" href="#" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Mobile nav drawer -->
-  <nav class="mobileNav" id="mobileNav" aria-label="Mobile navigation">
-    <a href="index.html">home</a>
-    <a href="merch.html">merch</a>
-    <a href="listen.html">listen</a>
-    
-  </nav>
-
-  <!-- Main hero (full-screen, centered) -->
+  <!-- Hero -->
   <main class="hero">
-    <div class="hero__inner">
-      <p class="hero__kicker">Bridging cultures and uniting eras</p>
+    <div class="hero__bg"></div>
 
-      <h1 class="hero__title">
-        DJ<br />
-        <span>NEXUS</span>
+    <section class="hero__content">
+      <p class="kicker">Bridging cultures and uniting eras.</p>
+
+      <h1 class="headline">
+        DJ Nexus
       </h1>
 
-      <p class="hero__sub">
-        Local bedroom DJ → global stage. New music + sets on the way.
+      <p class="subhead">
+        Mixing genres + generations into one vibe. Private parties, community events, and high-energy sets.
       </p>
 
-      <div class="hero__cta">
-        <a class="btn" href="listen.html">listen</a>
-        <a class="btn btn--ghost" href="merch.html">merch</a>
+      <div class="ctaRow">
+        <a class="btn btn--primary" href="listen.html">Play Music</a>
+        <a class="btn btn--ghost" href="merch.html">Merch</a>
       </div>
 
-      <div class="hero__footer">
-        <a class="miniLink" href="listen.html">Spotify + SoundCloud</a>
-        <span class="dot">•</span>
-        <a class="miniLink" href="https://on.soundcloud.com/WxCWd5XYHB6VaewYO2" target="_blank" rel="noopener">SoundCloud</a>
+      <div class="miniCards">
+        <div class="miniCard">
+          <div class="miniCard__title">Style</div>
+          <div class="miniCard__value">Global / EDM / Hip-Hop / Pop</div>
+        </div>
+        <div class="miniCard">
+          <div class="miniCard__title">Energy</div>
+          <div class="miniCard__value">Crowd-reading, live transitions</div>
+        </div>
+        <div class="miniCard">
+          <div class="miniCard__title">Bookings</div>
+          <div class="miniCard__value">DM on Instagram (link above)</div>
+        </div>
       </div>
-    </div>
 
-    <!-- Background vibe (no image needed; pure CSS gradient + glow) -->
-    <div class="bg" aria-hidden="true">
-      <div class="bg__glow bg__glow--a"></div>
-      <div class="bg__glow bg__glow--b"></div>
-      <div class="bg__glow bg__glow--c"></div>
-    </div>
+      <footer class="footerNote">
+        <span>© <span id="year"></span> DJ Nexus</span>
+      </footer>
+    </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
