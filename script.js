@@ -1,60 +1,46 @@
-const menuBtn = document.getElementById("menuBtn");
-const mobileNav = document.getElementById("mobileNav");
-
-if (menuBtn && mobileNav) {
-  const setOpen = (open) => {
-    mobileNav.classList.toggle("is-open", open);
-    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const isOpen = mobileNav.classList.contains("is-open");
-    setOpen(!isOpen);
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!mobileNav.contains(e.target) && e.target !== menuBtn) setOpen(false);
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setOpen(false);
-  });
-}
+// ====== Dropdown Menu Logic ======
 (function () {
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("dropdownMenu");
+  const menuBtn = document.getElementById("menuBtn");
+  const dropdownMenu = document.getElementById("dropdownMenu");
 
-  if (!btn || !menu) return;
+  // Safety check
+  if (!menuBtn || !dropdownMenu) return;
 
   function openMenu() {
-    menu.hidden = false;
-    btn.setAttribute("aria-expanded", "true");
+    dropdownMenu.hidden = false;
+    menuBtn.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
-    menu.hidden = true;
-    btn.setAttribute("aria-expanded", "false");
+    dropdownMenu.hidden = true;
+    menuBtn.setAttribute("aria-expanded", "false");
   }
 
   function toggleMenu() {
-    const expanded = btn.getAttribute("aria-expanded") === "true";
-    expanded ? closeMenu() : openMenu();
+    const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+    isOpen ? closeMenu() : openMenu();
   }
 
-  btn.addEventListener("click", (e) => {
+  // Toggle menu on button click
+  menuBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     toggleMenu();
   });
 
-  // close if you click outside
-  document.addEventListener("click", () => closeMenu());
-
-  // close on ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
+  // Close menu when clicking outside
+  document.addEventListener("click", function () {
+    closeMenu();
   });
 
-  // prevent clicks inside menu from closing instantly
-  menu.addEventListener("click", (e) => e.stopPropagation());
+  // Close menu when pressing ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  // Prevent clicks inside the menu from closing it
+  dropdownMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
 })();
