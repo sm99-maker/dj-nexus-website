@@ -11,13 +11,25 @@
 
 <body>
   <!-- Top Nav -->
-  <header class="nav">
-    <a class="brand" href="/">DJ NEXUS</a>
+<header class="nav">
+  <a class="brand" href="index.html">DJ NEXUS</a>
 
-    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+  <!-- Dropdown button (top right) -->
+  <div class="dropdown">
+    <button class="menuBtn dropdownBtn" id="menuBtn" aria-expanded="false" aria-controls="dropdownMenu">
       <span class="menuIcon" aria-hidden="true"></span>
       <span class="menuText">Menu</span>
     </button>
+
+    <!-- Dropdown menu -->
+    <nav class="dropdownMenu" id="dropdownMenu" hidden>
+      <a href="index.html">home</a>
+      <a href="merch.html">merch</a>
+      <a href="listen.html">listen</a>
+    </nav>
+  </div>
+</header>
+
 
     <!-- Desktop Links: ONLY home / merch / listen -->
   <nav class="links desktop">
