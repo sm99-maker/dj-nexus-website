@@ -4,87 +4,81 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DJ Nexus — Listen</title>
-  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
+  <meta name="description" content="DJ Nexus — Listen to my music." />
   <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Top Nav -->
+  <!-- Top Nav (Dropdown Menu) -->
   <header class="nav">
     <a class="brand" href="index.html">DJ NEXUS</a>
 
-    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="menuIcon" aria-hidden="true"></span>
-      <span class="menuText">Menu</span>
-    </button>
+    <div class="dropdown">
+      <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="dropdownMenu" type="button">
+        <span class="menuIcon" aria-hidden="true"></span>
+        <span class="menuText">menu</span>
+      </button>
 
-    <nav class="links desktop">
-      <a href="index.html">home</a>
-      <a href="merch.html">merch</a>
-      <a class="active" href="listen.html">listen</a>
-    </nav>
+      <nav class="dropdownMenu" id="dropdownMenu" hidden>
+        <a href="index.html">home</a>
+        <a href="merch.html">merch</a>
+        <a class="active" href="listen.html">listen</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Mobile Menu -->
-  <nav class="mobileMenu" id="mobileMenu" hidden>
-    <a href="index.html">home</a>
-    <a href="merch.html">merch</a>
-    <a class="active" href="listen.html">listen</a>
-  </nav>
+  <!-- Page Content -->
+  <main class="page">
+    <section class="pageInner">
+      <h1 class="pageTitle">listen</h1>
+      <p class="pageSub">preview my tracks right here — then open on spotify.</p>
 
-  <!-- Center Content -->
-  <main class="stage">
-    <section class="stack">
-      <p class="headline">listen</p>
-      <p class="subhead">Preview the tracks right here, then open on Spotify.</p>
+      <div class="embedGrid">
+        <!-- Track 1 -->
+        <article class="card">
+          <h2 class="cardTitle">track 1</h2>
+          <div class="playerWrap">
+            <iframe
+              title="DJ Nexus Track 1"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="cardActions">
+            <a class="btn" href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds" target="_blank" rel="noopener">
+              open on spotify
+            </a>
+          </div>
+        </article>
 
-      <!-- Track 1 -->
-      <div class="card">
-        <p class="cardTitle">Track 1</p>
-
-        <div class="embedWrap">
-          <iframe
-            title="Spotify embed track 1"
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds?utm_source=generator"
-            width="100%"
-            height="352"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <a class="cta" target="_blank" rel="noopener"
-           href="https://open.spotify.com/track/5tD0UgRCMIC9kCUG2F2Eds">
-          open on spotify
-        </a>
+        <!-- Track 2 -->
+        <article class="card">
+          <h2 class="cardTitle">track 2</h2>
+          <div class="playerWrap">
+            <iframe
+              title="DJ Nexus Track 2"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6?utm_source=generator"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="cardActions">
+            <a class="btn" href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6" target="_blank" rel="noopener">
+              open on spotify
+            </a>
+          </div>
+        </article>
       </div>
-
-      <!-- Track 2 -->
-      <div class="card">
-        <p class="cardTitle">Track 2</p>
-
-        <div class="embedWrap">
-          <iframe
-            title="Spotify embed track 2"
-            style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6?utm_source=generator"
-            width="100%"
-            height="352"
-            frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <a class="cta" target="_blank" rel="noopener"
-           href="https://open.spotify.com/track/5HffK1ZhSoWpvxQvVdFPR6">
-          open on spotify
-        </a>
-      </div>
-
     </section>
   </main>
 
