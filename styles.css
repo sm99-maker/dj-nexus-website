@@ -307,3 +307,4 @@ body{
 /* hide the old link bar if it exists somewhere */
 .links.desktop{ display:none !important; }
 .mobileMenu{ display:none !important; }
+
