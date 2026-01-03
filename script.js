@@ -1,9 +1,7 @@
-// ====== Dropdown Menu Logic ======
 (function () {
   const menuBtn = document.getElementById("menuBtn");
   const dropdownMenu = document.getElementById("dropdownMenu");
 
-  // Safety check
   if (!menuBtn || !dropdownMenu) return;
 
   function openMenu() {
@@ -21,26 +19,16 @@
     isOpen ? closeMenu() : openMenu();
   }
 
-  // Toggle menu on button click
-  menuBtn.addEventListener("click", function (e) {
+  menuBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     toggleMenu();
   });
 
-  // Close menu when clicking outside
-  document.addEventListener("click", function () {
-    closeMenu();
-  });
+  dropdownMenu.addEventListener("click", (e) => e.stopPropagation());
 
-  // Close menu when pressing ESC
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeMenu();
-    }
-  });
+  document.addEventListener("click", () => closeMenu());
 
-  // Prevent clicks inside the menu from closing it
-  dropdownMenu.addEventListener("click", function (e) {
-    e.stopPropagation();
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
   });
 })();
