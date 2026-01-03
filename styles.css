@@ -307,4 +307,30 @@ body{
 /* hide the old link bar if it exists somewhere */
 .links.desktop{ display:none !important; }
 .mobileMenu{ display:none !important; }
+/* ====== Spotify Button ====== */
+.btn{
+  display: inline-block;
+  text-decoration: none !important; /* kills blue underline */
+  color: var(--fg);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: lowercase;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(245,245,247,.16);
+  background: rgba(255,255,255,.05);
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+.btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(245,245,247,.28);
+  transform: translateY(-1px);
+}
+
+/* Optional: Spotify accent on hover */
+.spotifyBtn:hover{
+  color: var(--spotify);
+  border-color: var(--spotify);
+}
 
