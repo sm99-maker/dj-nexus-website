@@ -1,53 +1,436 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DJ Nexus</title>
-  <meta name="description" content="DJ Nexus — Bridging cultures and uniting eras." />
-  <link rel="icon" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Nexus - Different Cultures, One Wavelength</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .menu-btn {
+            background: none;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 4rem;
+            background: #000;
+            border: 1px solid #333;
+            min-width: 200px;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background: #111;
+            padding-left: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: #000 url('https://i.ibb.co/tTjq5HY7/stagger1.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .hero h1,
+        .hero .slogan,
+        .hero .intro,
+        .hero .social-links {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        .slogan {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .intro {
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+            transform: translateY(-2px);
+        }
+
+        .social-links svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        /* Content Sections */
+        .content-section {
+            min-height: 100vh;
+            padding: 8rem 4rem;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            letter-spacing: -1px;
+        }
+
+        /* Mixes Grid */
+        .mixes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mix-card {
+            background: #111;
+            padding: 2rem;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+        }
+
+        .mix-card:hover {
+            border-color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .mix-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mix-card p {
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .play-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            background: #ddd;
+        }
+
+        /* Tracks Grid */
+        .tracks-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .track-player {
+            background: #111;
+            padding: 2rem;
+            border: 1px solid #222;
+        }
+
+        .track-player h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .dropdown {
+                right: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .content-section {
+                padding: 6rem 2rem;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Top Nav (Dropdown Menu) -->
-  <header class="nav">
-    <a class="brand" href="index.html">DJ NEXUS</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="https://i.imgur.com/YbLRtix.png" alt="DJ Nexus" onerror="this.style.display='none'; this.parentElement.innerHTML='DJ NEXUS';">
+        </div>
+        <button class="menu-btn" onclick="toggleMenu()">MENU</button>
+        <div class="dropdown" id="menuDropdown">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('mixes')">Mixes</a>
+            <a href="https://www-nexusclothing.myshopify.com" target="_blank">Merch</a>
+            <a href="#" onclick="showSection('listen')">Listen</a>
+        </div>
+    </nav>
 
-    <div class="dropdown">
-      <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="dropdownMenu" type="button">
-        <span class="menuIcon" aria-hidden="true"></span>
-        <span class="menuText">menu</span>
-      </button>
-
-      <nav class="dropdownMenu" id="dropdownMenu" hidden>
-        <a class="active" href="index.html">home</a>
-       <a href="https://www-nexusclothing.myshopify.com/" target="_blank" rel="noopener">merch</a>
-        <a href="listen.html">listen</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Fullscreen Center Content -->
-  <main class="stage">
-    <section class="stack">
-      <p class="headline">“bridging cultures and uniting eras”</p>
-      <p class="headline">“DJ for parties, events, and everything in between”</p>
-      <p class="headline">“genre-mixing sets that actually move people”</p>
-
-      <a class="cta" href="mailto:YOUR_EMAIL@gmail.com">bookings: YOUR_EMAIL@gmail.com</a>
-      <a class="cta subtle" href="tel:+18624653608">+1 (862) 465-3608</a>
-
-      <div class="row">
-        <a class="pill instagram" href="https://www.instagram.com/dj___nexus/" target="_blank" rel="noopener">instagram</a>
-        <a class="pill tiktok" href="https://www.tiktok.com/@realdjnexus?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">tiktok</a>
-        <a class="pill youtube" href="https://www.youtube.com/@realdjnexus" target="_blank" rel="noopener">youtube</a>
-        <a class="pill spotify" href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY?si=4e1vMtBKS9-6ELSBiaL_Yg" target="_blank" rel="noopener">spotify</a>
-        <a class="pill soundcloud" href="https://soundcloud.com/dj-nexus-800323375" target="_blank" rel="noopener">soundcloud</a>
-      </div>
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <h1>DJ NEXUS</h1>
+        <p class="slogan">Different Cultures, One Wavelength</p>
+        <p class="intro">
+            A sonic journey through time and culture. Blending the essence of different musical eras 
+            to create unforgettable experiences on the dance floor. From classic grooves to cutting-edge beats, 
+            every set tells a story that connects generations.
+        </p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/dj___nexus/" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://www.tiktok.com/@realdjnexus" target="_blank" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+            </a>
+            <a href="https://soundcloud.com/dj-nexus-800323375" target="_blank" aria-label="SoundCloud">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.255-2.154c-.009-.057-.049-.1-.099-.1zm1.334.699c-.009-.057-.05-.1-.099-.1-.051 0-.09.043-.101.1l-.197 1.455.197 1.414c.011.057.05.098.101.098.049 0 .09-.041.099-.098l.232-1.414-.232-1.455zm1.257-1.854c-.011-.059-.051-.1-.102-.1-.051 0-.09.041-.099.1l-.197 3.309.197 3.206c.009.059.048.101.099.101.051 0 .091-.042.102-.101l.232-3.206-.232-3.309zm1.274-1.344c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.196 4.653.196 4.494c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.231-4.494-.231-4.653zm1.275-.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.197 5.251.197 5.068c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.232-5.068-.232-5.251zm1.273-.598c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.101.104l-.196 5.849.196 5.654c.01.061.05.104.101.104.051 0 .09-.043.099-.104l.232-5.654-.232-5.849zm1.257-.449c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.197 6.298.197 6.054c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.232-6.054-.232-6.298zm1.274.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.196 5.699.196 5.459c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.231-5.459-.231-5.699zm3.545 6.104c-.842 0-1.607-.389-2.102-1.004l-.196 6.104c0 .061.051.104.101.104h2.197c1.19 0 2.158-.967 2.158-2.156 0-1.189-.968-2.154-2.158-2.154zm-2.298-7.35c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.102.104l-.196 6.748.196 6.298c.011.061.051.104.102.104.051 0 .09-.043.099-.104l.232-6.298-.232-6.748z"/>
+                </svg>
+            </a>
+            <a href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY" target="_blank" aria-label="Spotify">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+            </a>
+            <a href="https://www.youtube.com/@realdjnexus" target="_blank" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
+        </div>
     </section>
-  </main>
 
-  <script src="script.js"></script>
+    <!-- Mixes Section -->
+    <section class="content-section" id="mixes">
+        <h2>Mixes</h2>
+        <div class="mixes-grid">
+            <div class="mix-card">
+                <h3>Summer Sessions Vol. 1</h3>
+                <p>90 mins • House & Techno</p>
+                <button class="play-btn">LISTEN NOW</button>
+            </div>
+            <div class="mix-card">
+                <h3>Throwback Thursdays</h3>
+                <p>75 mins • Classic House</p>
+                <button class="play-btn">LISTEN NOW</button>
+            </div>
+            <div class="mix-card">
+                <h3>Late Night Grooves</h3>
+                <p>120 mins • Deep House</p>
+                <button class="play-btn">LISTEN NOW</button>
+            </div>
+            <div class="mix-card">
+                <h3>Festival Warm-Up</h3>
+                <p>85 mins • Progressive House</p>
+                <button class="play-btn">LISTEN NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listen Section -->
+    <section class="content-section" id="listen">
+        <h2>Original Tracks</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: #111; padding: 2rem; border: 1px solid #222;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Featured on Spotify</h3>
+                
+                <div style="margin-bottom: 2rem;">
+                    <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Listen on Your Favorite Platform</h3>
+            <div style="display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <a href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #1DB954; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: opacity 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #1DB954;">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                    <span>Spotify</span>
+                </a>
+                <a href="https://soundcloud.com/dj-nexus-800323375" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #FF5500; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: opacity 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #FF5500;">
+                        <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.255-2.154c-.009-.057-.049-.1-.099-.1zm1.334.699c-.009-.057-.05-.1-.099-.1-.051 0-.09.043-.101.1l-.197 1.455.197 1.414c.011.057.05.098.101.098.049 0 .09-.041.099-.098l.232-1.414-.232-1.455zm1.257-1.854c-.011-.059-.051-.1-.102-.1-.051 0-.09.041-.099.1l-.197 3.309.197 3.206c.009.059.048.101.099.101.051 0 .091-.042.102-.101l.232-3.206-.232-3.309zm1.274-1.344c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.196 4.653.196 4.494c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.231-4.494-.231-4.653zm1.275-.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.197 5.251.197 5.068c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.232-5.068-.232-5.251zm1.273-.598c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.101.104l-.196 5.849.196 5.654c.01.061.05.104.101.104.051 0 .09-.043.099-.104l.232-5.654-.232-5.849zm1.257-.449c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.197 6.298.197 6.054c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.232-6.054-.232-6.298zm1.274.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.196 5.699.196 5.459c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.231-5.459-.231-5.699zm3.545 6.104c-.842 0-1.607-.389-2.102-1.004l-.196 6.104c0 .061.051.104.101.104h2.197c1.19 0 2.158-.967 2.158-2.156 0-1.189-.968-2.154-2.158-2.154zm-2.298-7.35c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.102.104l-.196 6.748.196 6.298c.011.061.051.104.102.104.051 0 .09-.043.099-.104l.232-6.298-.232-6.748z"/>
+                    </svg>
+                    <span>SoundCloud</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const dropdown = document.getElementById('menuDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.hero, .content-section').forEach(section => {
+                section.style.display = 'none';
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (sectionId === 'home') {
+                selectedSection.style.display = 'flex';
+            } else {
+                selectedSection.style.display = 'block';
+                selectedSection.classList.add('active');
+            }
+
+            // Close menu
+            document.getElementById('menuDropdown').classList.remove('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('menuDropdown');
+            const menuBtn = document.querySelector('.menu-btn');
+            
+            if (!dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
