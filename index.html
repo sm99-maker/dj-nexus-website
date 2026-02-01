@@ -289,6 +289,7 @@
             <a href="#" onclick="showSection('mixes')">Mixes</a>
             <a href="https://www-nexusclothing.myshopify.com" target="_blank">Merch</a>
             <a href="#" onclick="showSection('listen')">Tracks</a>
+            <a href="#" onclick="showSection('calendar')">Calendar</a>
         </div>
     </nav>
 
@@ -371,6 +372,189 @@
                     </svg>
                     <span>SoundCloud</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="content-section" id="calendar">
+        <h2>Book DJ Nexus</h2>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <p style="text-align: center; opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">Select a date to check availability and book your event</p>
+            
+            <div style="background: #111; padding: 2rem; border: 1px solid #222;">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" id="currentMonth">February 2026</h3>
+                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                        <button onclick="changeMonth(-1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.5rem 1rem; cursor: pointer;">← Previous</button>
+                        <button onclick="changeMonth(1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.5rem 1rem; cursor: pointer;">Next →</button>
+                    </div>
+                </div>
+                
+                <!-- February Calendar -->
+                <div id="calendarFeb" class="calendar-month">
+                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; margin-bottom: 2rem;">
+                    <!-- Day headers -->
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Sun</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Mon</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Tue</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Wed</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Thu</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Fri</div>
+                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Sat</div>
+                    
+                    <!-- Empty cells for start of month -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                    <!-- Days - Feb 2026 starts on Saturday -->
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">1</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
+                        <div style="font-size: 1.2rem;">2</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
+                        <div style="font-size: 1.2rem;">3</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
+                        <div style="font-size: 1.2rem;">4</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
+                        <div style="font-size: 1.2rem;">5</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
+                        <div style="font-size: 1.2rem;">6</div>
+                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">7</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    
+                    <!-- Week 2 -->
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">8</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">9</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">10</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">11</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">12</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">13</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #ff0000; padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; font-weight: 600;">14</div>
+                        <div style="font-size: 0.7rem; color: #ff0000; margin-top: 0.3rem;">Booked</div>
+                    </div>
+                    
+                    <!-- Week 3 -->
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">15</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">16</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">17</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">18</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">19</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">20</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">21</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    
+                    <!-- Week 4 -->
+                    <div style="background: #1a1a1a; border: 2px solid #ff0000; padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; font-weight: 600;">22</div>
+                        <div style="font-size: 0.7rem; color: #ff0000; margin-top: 0.3rem;">Booked</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">23</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">24</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">25</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">26</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">27</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
+                        <div style="font-size: 1.2rem; font-weight: 600;">28</div>
+                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
+                    </div>
+                </div>
+                
+                <!-- Legend -->
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #222;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #00ff00;"></div>
+                        <span>Available</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #ff0000;"></div>
+                        <span>Booked</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #333; opacity: 0.5;"></div>
+                        <span>Past</span>
+                    </div>
+                </div>
+                
+                <!-- Contact Section -->
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; text-align: center;">
+                    <h3 style="margin-bottom: 1rem;">Ready to Book?</h3>
+                    <p style="opacity: 0.9; margin-bottom: 0.5rem;">Click an available date or contact me directly to discuss your event</p>
+                    <p style="opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.9rem;"><strong>Please note:</strong> I am unavailable from June 21st to July 5th</p>
+                    <a href="mailto:your-email@example.com" style="display: inline-block; background: #fff; color: #000; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">Contact for Booking</a>
+                </div>
             </div>
         </div>
     </section>
