@@ -198,7 +198,6 @@
             <a href="#" onclick="showSection('mixes')">Mixes</a>
             <a href="https://www-nexusclothing.myshopify.com" target="_blank">Merch</a>
             <a href="#" onclick="showSection('listen')">Tracks</a>
-            <a href="#" onclick="showSection('calendar')">Calendar</a>
         </div>
     </nav>
 
@@ -224,7 +223,7 @@
                     <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Fhigh-energy-graduation-party-mix%2F" frameborder="0"></iframe>
                 </div>
                 <div style="background: #111; padding: 2rem; border: 1px solid #222;">
-                    <img src="https://i.ibb.co/27KrLzz5/Chat-GPT-Image-Feb-1-2026-at-09-36-53-PM.png" alt="Tropical Beach Mix" style="width: 100%; height: auto; margin-bottom: 1.5rem; border-radius: 8px;">
+                    <img src="https://i.ibb.co/XZJPdnnV/Chat-GPT-Image-Feb-1-2026-at-09-36-53-PM.png" alt="Tropical Beach Mix" style="width: 100%; height: auto; margin-bottom: 1.5rem; border-radius: 8px;">
                     <h3 style="text-align: center; margin-bottom: 1rem;">Tropical Beach Mix</h3>
                     <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Ftropical-beach-mix%2F" frameborder="0"></iframe>
                 </div>
@@ -297,4 +296,18 @@
                     <option>Wedding</option>
                     <option>Corporate Event</option>
                     <option>Graduation Party</option>
-                    <option
+                    <option>Club Night</option>
+                    <option>Private Party</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Additional Details:</label>
+                <textarea id="eventDetails" placeholder="Tell me about your event..."></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-submit" onclick="submitBooking()">Submit Request</button>
+            </div>
+        </div>
+    </div>
