@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ Nexus - Bridging Cultures, Uniting Eras</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: #000;
@@ -18,7 +14,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -32,32 +27,18 @@
             backdrop-filter: blur(10px);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
+        .logo img { height: 50px; width: auto; }
 
         .menu-btn {
             background: none;
             border: 1px solid #fff;
             color: #fff;
             padding: 0.75rem 1.5rem;
-            font-size: 0.9rem;
             cursor: pointer;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
-
-        .menu-btn:hover {
-            background: #fff;
-            color: #000;
-        }
+        .menu-btn:hover { background: #fff; color: #000; }
 
         .dropdown {
             display: none;
@@ -69,30 +50,17 @@
             min-width: 200px;
             margin-top: 0.5rem;
         }
-
-        .dropdown.active {
-            display: block;
-        }
-
+        .dropdown.active { display: block; }
         .dropdown a {
             display: block;
             padding: 1rem 1.5rem;
             color: #fff;
             text-decoration: none;
             border-bottom: 1px solid #222;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
+        .dropdown a:hover { background: #111; padding-left: 2rem; }
 
-        .dropdown a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown a:hover {
-            background: #111;
-            padding-left: 2rem;
-        }
-
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -105,184 +73,116 @@
             background: #000 url('https://i.ibb.co/tTjq5HY7/stagger1.jpg') no-repeat center center;
             background-size: cover;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             background: rgba(0, 0, 0, 0.6);
             z-index: 0;
         }
-
-        .hero h1,
-        .hero .slogan,
-        .hero .intro,
-        .hero .social-links {
-            position: relative;
-            z-index: 1;
-        }
-
+        .hero > * { position: relative; z-index: 1; }
         .hero h1 {
             font-size: clamp(3rem, 8vw, 7rem);
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin: 15vh 0 1rem 0;
             letter-spacing: -2px;
-            line-height: 1;
-            margin-top: 15vh;
         }
-
         .slogan {
             font-size: clamp(1rem, 2vw, 1.5rem);
-            font-weight: 300;
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 3rem;
             opacity: 0.8;
         }
 
-        .intro {
-            max-width: 600px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
+        .social-links { display: flex; gap: 2rem; margin-top: 2rem; }
+        .social-links a { transition: all 0.3s; }
+        .social-links a:hover { opacity: 0.7; transform: translateY(-2px); }
+        .social-links svg { width: 32px; height: 32px; fill: #fff; }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            opacity: 0.7;
-            transform: translateY(-2px);
-        }
-
-        .social-links svg {
-            width: 32px;
-            height: 32px;
-            fill: #fff;
-        }
-
-        /* Content Sections */
         .content-section {
             min-height: 100vh;
             padding: 8rem 4rem;
             display: none;
         }
+        .content-section.active { display: block; }
+        .content-section h2 { font-size: 3rem; margin-bottom: 3rem; }
 
-        .content-section.active {
-            display: block;
-        }
-
-        .content-section h2 {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            letter-spacing: -1px;
-        }
-
-        /* Mixes Grid */
-        .mixes-grid {
+        .calendar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .mix-card {
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
             background: #111;
             padding: 2rem;
             border: 1px solid #222;
-            transition: all 0.3s ease;
+            margin-bottom: 2rem;
         }
-
-        .mix-card:hover {
-            border-color: #fff;
-            transform: translateY(-5px);
+        .calendar-day-header { text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6; }
+        .calendar-day {
+            background: #1a1a1a;
+            padding: 1rem;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.3s;
         }
+        .calendar-day.available { border: 2px solid #00ff00; cursor: pointer; }
+        .calendar-day.available:hover { background: #222; }
+        .calendar-day.booked { border: 2px solid #ff0000; }
+        .calendar-day.past { border: 2px solid #333; opacity: 0.5; }
+        .calendar-day.empty { background: transparent; border: none; }
 
-        .mix-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
         }
-
-        .mix-card p {
-            opacity: 0.7;
-            margin-bottom: 1rem;
+        .modal.active { display: flex; }
+        .modal-content {
+            background: #111;
+            padding: 3rem;
+            border: 1px solid #333;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 8px;
         }
-
-        .play-btn {
-            background: #fff;
-            color: #000;
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; opacity: 0.8; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .form-group textarea { min-height: 100px; }
+        .modal-buttons { display: flex; gap: 1rem; margin-top: 2rem; }
+        .modal-buttons button {
+            flex: 1;
+            padding: 1rem;
             border: none;
-            padding: 0.75rem 1.5rem;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
-
-        .play-btn:hover {
-            background: #ddd;
-        }
-
-        /* Tracks Grid */
-        .tracks-grid {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .track-player {
-            background: #111;
-            padding: 2rem;
-            border: 1px solid #222;
-        }
-
-        .track-player h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
+        .btn-submit { background: #fff; color: #000; }
+        .btn-cancel { background: #333; color: #fff; }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1.5rem 2rem;
-            }
-
-            .dropdown {
-                right: 2rem;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .content-section {
-                padding: 6rem 2rem;
-            }
-
-            .social-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+            .calendar-grid { gap: 0.25rem; padding: 1rem; }
+            .calendar-day { min-height: 60px; padding: 0.5rem; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="logo">
-            <img src="https://i.imgur.com/YbLRtix.png" alt="DJ Nexus" onerror="this.style.display='none'; this.parentElement.innerHTML='DJ NEXUS';">
-        </div>
+        <div class="logo">DJ NEXUS</div>
         <button class="menu-btn" onclick="toggleMenu()">MENU</button>
         <div class="dropdown" id="menuDropdown">
             <a href="#" onclick="showSection('home')">Home</a>
@@ -293,310 +193,219 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
     <section class="hero" id="home">
         <h1>DJ NEXUS</h1>
         <p class="slogan">Bridging Cultures - Uniting Eras</p>
-        
         <div class="social-links">
-            <a href="https://www.instagram.com/dj___nexus/" target="_blank" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-            </a>
-            <a href="https://www.tiktok.com/@realdjnexus" target="_blank" aria-label="TikTok">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                </svg>
-            </a>
-            <a href="https://soundcloud.com/dj-nexus-800323375" target="_blank" aria-label="SoundCloud">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.255-2.154c-.009-.057-.049-.1-.099-.1zm1.334.699c-.009-.057-.05-.1-.099-.1-.051 0-.09.043-.101.1l-.197 1.455.197 1.414c.011.057.05.098.101.098.049 0 .09-.041.099-.098l.232-1.414-.232-1.455zm1.257-1.854c-.011-.059-.051-.1-.102-.1-.051 0-.09.041-.099.1l-.197 3.309.197 3.206c.009.059.048.101.099.101.051 0 .091-.042.102-.101l.232-3.206-.232-3.309zm1.274-1.344c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.196 4.653.196 4.494c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.231-4.494-.231-4.653zm1.275-.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.197 5.251.197 5.068c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.232-5.068-.232-5.251zm1.273-.598c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.101.104l-.196 5.849.196 5.654c.01.061.05.104.101.104.051 0 .09-.043.099-.104l.232-5.654-.232-5.849zm1.257-.449c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.197 6.298.197 6.054c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.232-6.054-.232-6.298zm1.274.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.196 5.699.196 5.459c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.231-5.459-.231-5.699zm3.545 6.104c-.842 0-1.607-.389-2.102-1.004l-.196 6.104c0 .061.051.104.101.104h2.197c1.19 0 2.158-.967 2.158-2.156 0-1.189-.968-2.154-2.158-2.154zm-2.298-7.35c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.102.104l-.196 6.748.196 6.298c.011.061.051.104.102.104.051 0 .09-.043.099-.104l.232-6.298-.232-6.748z"/>
-                </svg>
-            </a>
-            <a href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY" target="_blank" aria-label="Spotify">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-                </svg>
-            </a>
-            <a href="https://www.youtube.com/@realdjnexus" target="_blank" aria-label="YouTube">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-            </a>
+            <a href="https://www.instagram.com/dj___nexus/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.tiktok.com/@realdjnexus" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+            <a href="https://soundcloud.com/dj-nexus-800323375" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.255-2.154c-.009-.057-.049-.1-.099-.1zm1.334.699c-.009-.057-.05-.1-.099-.1-.051 0-.09.043-.101.1l-.197 1.455.197 1.414c.011.057.05.098.101.098.049 0 .09-.041.099-.098l.232-1.414-.232-1.455zm1.257-1.854c-.011-.059-.051-.1-.102-.1-.051 0-.09.041-.099.1l-.197 3.309.197 3.206c.009.059.048.101.099.101.051 0 .091-.042.102-.101l.232-3.206-.232-3.309zm1.274-1.344c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.196 4.653.196 4.494c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.231-4.494-.231-4.653zm1.275-.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.197 5.251.197 5.068c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.232-5.068-.232-5.251zm1.273-.598c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.101.104l-.196 5.849.196 5.654c.01.061.05.104.101.104.051 0 .09-.043.099-.104l.232-5.654-.232-5.849zm1.257-.449c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.197 6.298.197 6.054c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.232-6.054-.232-6.298zm1.274.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.196 5.699.196 5.459c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.231-5.459-.231-5.699zm3.545 6.104c-.842 0-1.607-.389-2.102-1.004l-.196 6.104c0 .061.051.104.101.104h2.197c1.19 0 2.158-.967 2.158-2.156 0-1.189-.968-2.154-2.158-2.154zm-2.298-7.35c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.102.104l-.196 6.748.196 6.298c.011.061.051.104.102.104.051 0 .09-.043.099-.104l.232-6.298-.232-6.748z"/></svg></a>
+            <a href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+            <a href="https://www.youtube.com/@realdjnexus" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
     </section>
 
-    <!-- Mixes Section -->
     <section class="content-section" id="mixes">
         <h2>Mixes</h2>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div class="mix-card" style="margin-bottom: 2rem;">
-                <img src="https://i.ibb.co/p6NTQgsT/Chat-GPT-Image-Jan-26-2026-at-04-39-51-PM.png" alt="High Energy Graduation Party Mix" style="width: 100%; max-width: 400px; height: auto; margin: 0 auto 1.5rem; display: block; border-radius: 8px;">
-                <h3>High Energy Graduation Party Mix</h3>
-                <p style="margin-bottom: 1rem;">DJ Mix</p>
-                <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Fhigh-energy-graduation-party-mix%2F" frameborder="0"></iframe>
-            </div>
+        <div style="max-width: 800px; margin: 0 auto; background: #111; padding: 2rem; border: 1px solid #222;">
+            <img src="https://i.ibb.co/p6NTQgsT/Chat-GPT-Image-Jan-26-2026-at-04-39-51-PM.png" alt="Mix Cover" style="width: 100%; max-width: 400px; margin: 0 auto 1.5rem; display: block; border-radius: 8px;">
+            <h3 style="text-align: center; margin-bottom: 1rem;">High Energy Graduation Party Mix</h3>
+            <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Fhigh-energy-graduation-party-mix%2F" frameborder="0"></iframe>
         </div>
     </section>
 
-    <!-- Listen Section -->
     <section class="content-section" id="listen">
         <h2>Original Tracks</h2>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div style="background: #111; padding: 2rem; border: 1px solid #222;">
-                <h3 style="text-align: center; margin-bottom: 2rem;">Featured on Spotify</h3>
-                
-                <div style="margin-bottom: 2rem;">
-                    <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-                
-                <div style="margin-bottom: 2rem;">
-                    <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-        
-        <div style="margin-top: 3rem; text-align: center;">
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Listen on Your Favorite Platform</h3>
-            <div style="display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <a href="https://open.spotify.com/artist/65DGWzQeIPtfnBtuZ8UHAY" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #1DB954; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: opacity 0.3s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #1DB954;">
-                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-                    </svg>
-                    <span>Spotify</span>
-                </a>
-                <a href="https://soundcloud.com/dj-nexus-800323375" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; color: #FF5500; text-decoration: none; font-size: 1.1rem; font-weight: 600; transition: opacity 0.3s;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 40px; height: 40px; fill: #FF5500;">
-                        <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.255-2.154c-.009-.057-.049-.1-.099-.1zm1.334.699c-.009-.057-.05-.1-.099-.1-.051 0-.09.043-.101.1l-.197 1.455.197 1.414c.011.057.05.098.101.098.049 0 .09-.041.099-.098l.232-1.414-.232-1.455zm1.257-1.854c-.011-.059-.051-.1-.102-.1-.051 0-.09.041-.099.1l-.197 3.309.197 3.206c.009.059.048.101.099.101.051 0 .091-.042.102-.101l.232-3.206-.232-3.309zm1.274-1.344c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.196 4.653.196 4.494c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.231-4.494-.231-4.653zm1.275-.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.197 5.251.197 5.068c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.232-5.068-.232-5.251zm1.273-.598c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.101.104l-.196 5.849.196 5.654c.01.061.05.104.101.104.051 0 .09-.043.099-.104l.232-5.654-.232-5.849zm1.257-.449c-.009-.061-.049-.104-.099-.104-.051 0-.091.043-.102.104l-.197 6.298.197 6.054c.011.061.051.104.102.104.05 0 .09-.043.099-.104l.232-6.054-.232-6.298zm1.274.598c-.009-.061-.05-.104-.101-.104-.049 0-.089.043-.099.104l-.196 5.699.196 5.459c.01.061.05.104.099.104.051 0 .092-.043.101-.104l.231-5.459-.231-5.699zm3.545 6.104c-.842 0-1.607-.389-2.102-1.004l-.196 6.104c0 .061.051.104.101.104h2.197c1.19 0 2.158-.967 2.158-2.156 0-1.189-.968-2.154-2.158-2.154zm-2.298-7.35c-.009-.061-.048-.104-.099-.104-.051 0-.091.043-.102.104l-.196 6.748.196 6.298c.011.061.051.104.102.104.051 0 .09-.043.099-.104l.232-6.298-.232-6.748z"/>
-                    </svg>
-                    <span>SoundCloud</span>
-                </a>
-            </div>
+        <div style="max-width: 800px; margin: 0 auto; background: #111; padding: 2rem; border: 1px solid #222;">
+            <h3 style="text-align: center; margin-bottom: 2rem;">Featured on Spotify</h3>
+            <iframe style="border-radius:12px; margin-bottom: 2rem;" src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds" width="100%" height="352" frameBorder="0"></iframe>
+            <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6" width="100%" height="352" frameBorder="0"></iframe>
         </div>
     </section>
 
-    <!-- Calendar Section -->
     <section class="content-section" id="calendar">
         <h2>Book DJ Nexus</h2>
         <div style="max-width: 1000px; margin: 0 auto;">
-            <p style="text-align: center; opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem;">Select a date to check availability and book your event</p>
-            
-            <div style="background: #111; padding: 2rem; border: 1px solid #222;">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" id="currentMonth">February 2026</h3>
-                    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-                        <button onclick="changeMonth(-1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.5rem 1rem; cursor: pointer;">← Previous</button>
-                        <button onclick="changeMonth(1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.5rem 1rem; cursor: pointer;">Next →</button>
-                    </div>
-                </div>
-                
-                <!-- February Calendar -->
-                <div id="calendarFeb" class="calendar-month">
-                <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; margin-bottom: 2rem;">
-                    <!-- Day headers -->
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Sun</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Mon</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Tue</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Wed</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Thu</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Fri</div>
-                    <div style="text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6;">Sat</div>
-                    
-                    <!-- Empty cells for start of month -->
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    
-                    <!-- Days - Feb 2026 starts on Saturday -->
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">1</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
-                        <div style="font-size: 1.2rem;">2</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
-                        <div style="font-size: 1.2rem;">3</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
-                        <div style="font-size: 1.2rem;">4</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
-                        <div style="font-size: 1.2rem;">5</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #333; padding: 1rem; text-align: center; opacity: 0.5;">
-                        <div style="font-size: 1.2rem;">6</div>
-                        <div style="font-size: 0.7rem; margin-top: 0.3rem;">Past</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">7</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    
-                    <!-- Week 2 -->
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">8</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">9</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">10</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">11</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">12</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">13</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #ff0000; padding: 1rem; text-align: center;">
-                        <div style="font-size: 1.2rem; font-weight: 600;">14</div>
-                        <div style="font-size: 0.7rem; color: #ff0000; margin-top: 0.3rem;">Booked</div>
-                    </div>
-                    
-                    <!-- Week 3 -->
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">15</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">16</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">17</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">18</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">19</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">20</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">21</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    
-                    <!-- Week 4 -->
-                    <div style="background: #1a1a1a; border: 2px solid #ff0000; padding: 1rem; text-align: center;">
-                        <div style="font-size: 1.2rem; font-weight: 600;">22</div>
-                        <div style="font-size: 0.7rem; color: #ff0000; margin-top: 0.3rem;">Booked</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">23</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">24</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">25</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">26</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">27</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                    <div style="background: #1a1a1a; border: 2px solid #00ff00; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#222'" onmouseout="this.style.background='#1a1a1a'">
-                        <div style="font-size: 1.2rem; font-weight: 600;">28</div>
-                        <div style="font-size: 0.7rem; color: #00ff00; margin-top: 0.3rem;">Available</div>
-                    </div>
-                </div>
-                
-                <!-- Legend -->
-                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #222;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #00ff00;"></div>
-                        <span>Available</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #ff0000;"></div>
-                        <span>Booked</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div style="width: 20px; height: 20px; background: #1a1a1a; border: 2px solid #333; opacity: 0.5;"></div>
-                        <span>Past</span>
-                    </div>
-                </div>
-                
-                <!-- Contact Section -->
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; text-align: center;">
-                    <h3 style="margin-bottom: 1rem;">Ready to Book?</h3>
-                    <p style="opacity: 0.9; margin-bottom: 0.5rem;">Click an available date or contact me directly to discuss your event</p>
-                    <p style="opacity: 0.7; margin-bottom: 1.5rem; font-size: 0.9rem;"><strong>Please note:</strong> I am unavailable from June 21st to July 5th</p>
-                    <a href="mailto:your-email@example.com" style="display: inline-block; background: #fff; color: #000; padding: 1rem 2rem; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s;">Contact for Booking</a>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 id="currentMonth" style="font-size: 1.8rem; margin-bottom: 1rem;">February 2026</h3>
+                <button onclick="changeMonth(-1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.75rem 1.5rem; cursor: pointer; margin-right: 1rem;">← Prev</button>
+                <button onclick="changeMonth(1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.75rem 1.5rem; cursor: pointer;">Next →</button>
+            </div>
+            <div id="calendarContainer"></div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <div style="display: inline-flex; gap: 2rem;">
+                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #00ff00; margin-right: 0.5rem;"></span>Available</div>
+                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #ff0000; margin-right: 0.5rem;"></span>Booked</div>
+                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #333; opacity: 0.5; margin-right: 0.5rem;"></span>Past</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h3>Book DJ Nexus</h3>
+            <div class="form-group">
+                <label>Date:</label>
+                <input type="text" id="bookingDate" readonly>
+            </div>
+            <div class="form-group">
+                <label>Your Name:</label>
+                <input type="text" id="clientName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="clientEmail" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label>Event Type:</label>
+                <select id="eventType">
+                    <option>Birthday Party</option>
+                    <option>Wedding</option>
+                    <option>Corporate Event</option>
+                    <option>Graduation Party</option>
+                    <option>Club Night</option>
+                    <option>Private Party</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Additional Details:</label>
+                <textarea id="eventDetails" placeholder="Tell me about your event..."></textarea>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-submit" onclick="submitBooking()">Submit Request</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        function toggleMenu() {
-            const dropdown = document.getElementById('menuDropdown');
-            dropdown.classList.toggle('active');
-        }
+        let currentMonthIndex = 1; // Start at February (0-indexed)
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        const firstDayOfMonth = [6, 0, 6, 2, 4, 0, 2, 5, 1, 3, 6, 1]; // 2026 calendar
+        
+        // Booked dates (format: 'month-day')
+        const bookedDates = ['1-13', '1-21', '3-17', '4-2', '7-0']; // Feb 14, Feb 22, Apr 18, May 2, Aug 1
+        
+        // Unavailable period: June 21 - July 5
+        const unavailablePeriod = [];
+        // March 28 - April 5
+        for(let i = 28; i <= 31; i++) unavailablePeriod.push(`2-${i}`); // March 28-31
+        for(let i = 1; i <= 5; i++) unavailablePeriod.push(`3-${i}`); // April 1-5
+        // June 21 - July 5
+        for(let i = 21; i <= 30; i++) unavailablePeriod.push(`5-${i}`); // June 21-30
+        for(let i = 1; i <= 5; i++) unavailablePeriod.push(`6-${i}`); // July 1-5
 
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.hero, .content-section').forEach(section => {
-                section.style.display = 'none';
-                section.classList.remove('active');
-            });
-
-            // Show selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (sectionId === 'home') {
-                selectedSection.style.display = 'flex';
-            } else {
-                selectedSection.style.display = 'block';
-                selectedSection.classList.add('active');
+        function renderCalendar() {
+            const container = document.getElementById('calendarContainer');
+            const month = currentMonthIndex;
+            const monthName = months[month];
+            document.getElementById('currentMonth').textContent = monthName + ' 2026';
+            
+            let html = '<div class="calendar-grid">';
+            html += '<div class="calendar-day-header">Sun</div><div class="calendar-day-header">Mon</div><div class="calendar-day-header">Tue</div><div class="calendar-day-header">Wed</div><div class="calendar-day-header">Thu</div><div class="calendar-day-header">Fri</div><div class="calendar-day-header">Sat</div>';
+            
+            // Empty cells before month starts
+            for(let i = 0; i < firstDayOfMonth[month]; i++) {
+                html += '<div class="calendar-day empty"></div>';
             }
-
-            // Close menu
-            document.getElementById('menuDropdown').classList.remove('active');
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Days of month
+            const today = new Date();
+            const currentDay = today.getDate();
+            const currentMonth = today.getMonth();
+            
+            for(let day = 1; day <= daysInMonth[month]; day++) {
+                const dateKey = `${month}-${day}`;
+                const isPast = (month < currentMonth) || (month === currentMonth && day < currentDay);
+                const isBooked = bookedDates.includes(dateKey);
+                const isUnavailable = unavailablePeriod.includes(dateKey);
+                
+                let className = 'calendar-day ';
+                let status = '';
+                let onclick = '';
+                
+                if (isPast) {
+                    className += 'past';
+                    status = 'Past';
+                } else if (isBooked || isUnavailable) {
+                    className += 'booked';
+                    status = '<span class="day-status booked">Booked</span>';
+                } else {
+                    className += 'available';
+                    status = '<span class="day-status available">Available</span>';
+                    onclick = `onclick="openBooking('${monthName} ${day}, 2026')"`;
+                }
+                
+                html += `<div class="${className}" ${onclick}><div class="day-number">${day}</div>${status}</div>`;
+            }
+            
+            html += '</div>';
+            container.innerHTML = html;
         }
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        function changeMonth(direction) {
+            currentMonthIndex += direction;
+            if (currentMonthIndex < 0) currentMonthIndex = 11;
+            if (currentMonthIndex > 11) currentMonthIndex = 0;
+            renderCalendar();
+        }
+
+        function openBooking(date) {
+            document.getElementById('bookingDate').value = date;
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        function submitBooking() {
+            const date = document.getElementById('bookingDate').value;
+            const name = document.getElementById('clientName').value;
+            const email = document.getElementById('clientEmail').value;
+            const type = document.getElementById('eventType').value;
+            const details = document.getElementById('eventDetails').value;
+            
+            if (!name || !email) {
+                alert('Please fill in your name and email');
+                return;
+            }
+            
+            // Create mailto link
+            const subject = `DJ Booking Request - ${date}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ADate: ${date}%0D%0AEvent Type: ${type}%0D%0ADetails: ${details}`;
+            window.location.href = `mailto:realdjnexus1@gmail.com?subject=${subject}&body=${body}`;
+            
+            closeModal();
+            alert('Your booking request has been sent! I will contact you soon.');
+        }
+
+        function toggleMenu() {
+            document.getElementById('menuDropdown').classList.toggle('active');
+        }
+
+        function showSection(id) {
+            document.querySelectorAll('.hero, .content-section').forEach(s => s.style.display = 'none');
+            const section = document.getElementById(id);
+            section.style.display = id === 'home' ? 'flex' : 'block';
+            section.classList.add('active');
+            document.getElementById('menuDropdown').classList.remove('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        document.addEventListener('click', function(e) {
             const dropdown = document.getElementById('menuDropdown');
             const menuBtn = document.querySelector('.menu-btn');
-            
-            if (!dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+            if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
                 dropdown.classList.remove('active');
             }
         });
+
+        // Initialize calendar
+        renderCalendar();
     </script>
 </body>
 </html>
