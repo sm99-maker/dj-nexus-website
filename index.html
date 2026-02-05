@@ -94,7 +94,7 @@
             opacity: 0.8;
         }
 
-        .social-links { display: flex; gap: 2rem; margin-top: 2rem; }
+        .social-links { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
         .social-links a { transition: all 0.3s; }
         .social-links a:hover { opacity: 0.7; transform: translateY(-2px); }
         .social-links svg { width: 32px; height: 32px; fill: #fff; }
@@ -107,85 +107,11 @@
         .content-section.active { display: block; }
         .content-section h2 { font-size: 3rem; margin-bottom: 3rem; }
 
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.5rem;
-            background: #111;
-            padding: 2rem;
-            border: 1px solid #222;
-            margin-bottom: 2rem;
-        }
-        .calendar-day-header { text-align: center; padding: 1rem; font-weight: 600; opacity: 0.6; }
-        .calendar-day {
-            background: #1a1a1a;
-            padding: 1rem;
-            text-align: center;
-            min-height: 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        .calendar-day.available { border: 2px solid #00ff00; cursor: pointer; }
-        .calendar-day.available:hover { background: #222; }
-        .calendar-day.booked { border: 2px solid #ff0000; }
-        .calendar-day.past { border: 2px solid #333; opacity: 0.5; }
-        .calendar-day.empty { background: transparent; border: none; }
-
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal.active { display: flex; }
-        .modal-content {
-            background: #111;
-            padding: 3rem;
-            border: 1px solid #333;
-            max-width: 500px;
-            width: 90%;
-            border-radius: 8px;
-        }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; opacity: 0.8; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            color: #fff;
-            font-size: 1rem;
-        }
-        .form-group textarea { min-height: 100px; }
-        .modal-buttons { display: flex; gap: 1rem; margin-top: 2rem; }
-        .modal-buttons button {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        .btn-submit { background: #fff; color: #000; }
-        .btn-cancel { background: #333; color: #fff; }
-
         @media (max-width: 768px) {
             nav { padding: 1.5rem 2rem; }
             .dropdown { right: 2rem; }
             .hero h1 { font-size: 3rem; }
             .content-section { padding: 6rem 2rem; }
-            .social-links { flex-wrap: wrap; justify-content: center; }
-            .calendar-grid { gap: 0.2rem; padding: 0.5rem; }
-            .calendar-day { min-height: 50px; padding: 0.25rem; font-size: 0.75rem; }
-            .day-number { font-size: 0.9rem; }
-            .day-status { font-size: 0.55rem; }
-            .calendar-day-header { padding: 0.5rem 0.25rem; font-size: 0.75rem; }
-            #currentMonth { font-size: 1.3rem; }
-            .modal-content { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -223,7 +149,7 @@
                     <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Fhigh-energy-graduation-party-mix%2F" frameborder="0"></iframe>
                 </div>
                 <div style="background: #111; padding: 2rem; border: 1px solid #222;">
-                    <img src="https://i.ibb.co/XZJPdnnV/Chat-GPT-Image-Feb-1-2026-at-09-36-53-PM.png" alt="Tropical Beach Mix" style="width: 100%; height: auto; margin-bottom: 1.5rem; border-radius: 8px;">
+                    <img src="https://i.ibb.co/XZJPdnnV/tropical.png" alt="Tropical Beach Mix" style="width: 100%; height: auto; margin-bottom: 1.5rem; border-radius: 8px;">
                     <h3 style="text-align: center; margin-bottom: 1rem;">Tropical Beach Mix</h3>
                     <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FDJ___Nexus%2Ftropical-beach-mix%2F" frameborder="0"></iframe>
                 </div>
@@ -235,8 +161,8 @@
         <h2>Original Tracks</h2>
         <div style="max-width: 800px; margin: 0 auto; background: #111; padding: 2rem; border: 1px solid #222;">
             <h3 style="text-align: center; margin-bottom: 2rem;">Featured on Spotify</h3>
-            <iframe style="border-radius:12px; margin-bottom: 2rem;" src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds" width="100%" height="352" frameBorder="0"></iframe>
-            <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6" width="100%" height="352" frameBorder="0"></iframe>
+            <iframe style="border-radius:12px; margin-bottom: 2rem;" src="https://open.spotify.com/embed/track/5tD0UgRCMIC9kCUG2F2Eds" width="100%" height="352" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/track/5HffK1ZhSoWpvxQvVdFPR6" width="100%" height="352" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
         <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; text-align: center;">
             <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Listen On</h3>
@@ -255,59 +181,29 @@
         </div>
     </section>
 
-    <section class="content-section" id="calendar">
-        <h2>Book DJ Nexus</h2>
-        <div style="max-width: 1000px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <h3 id="currentMonth" style="font-size: 1.8rem; margin-bottom: 1rem;">February 2026</h3>
-                <button onclick="changeMonth(-1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.75rem 1.5rem; cursor: pointer; margin-right: 1rem;">← Prev</button>
-                <button onclick="changeMonth(1)" style="background: #222; border: 1px solid #333; color: #fff; padding: 0.75rem 1.5rem; cursor: pointer;">Next →</button>
-            </div>
-            <div id="calendarContainer"></div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <div style="display: inline-flex; gap: 2rem;">
-                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #00ff00; margin-right: 0.5rem;"></span>Available</div>
-                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #ff0000; margin-right: 0.5rem;"></span>Booked</div>
-                    <div><span style="display: inline-block; width: 20px; height: 20px; border: 2px solid #333; opacity: 0.5; margin-right: 0.5rem;"></span>Past</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        function toggleMenu() {
+            document.getElementById('menuDropdown').classList.toggle('active');
+        }
 
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <h3>Book DJ Nexus</h3>
-            <div class="form-group">
-                <label>Date:</label>
-                <input type="text" id="bookingDate" readonly>
-            </div>
-            <div class="form-group">
-                <label>Your Name:</label>
-                <input type="text" id="clientName" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" id="clientEmail" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-                <label>Event Type:</label>
-                <select id="eventType">
-                    <option>Birthday Party</option>
-                    <option>Wedding</option>
-                    <option>Corporate Event</option>
-                    <option>Graduation Party</option>
-                    <option>Club Night</option>
-                    <option>Private Party</option>
-                    <option>Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Additional Details:</label>
-                <textarea id="eventDetails" placeholder="Tell me about your event..."></textarea>
-            </div>
-            <div class="modal-buttons">
-                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
-                <button class="btn-submit" onclick="submitBooking()">Submit Request</button>
-            </div>
-        </div>
-    </div>
+        function showSection(id) {
+            document.querySelectorAll('.hero, .content-section').forEach(function(s) {
+                s.style.display = 'none';
+            });
+            const section = document.getElementById(id);
+            section.style.display = id === 'home' ? 'flex' : 'block';
+            section.classList.add('active');
+            document.getElementById('menuDropdown').classList.remove('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('menuDropdown');
+            const menuBtn = document.querySelector('.menu-btn');
+            if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
